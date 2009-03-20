@@ -14,7 +14,7 @@ cp -r $cwd/league $cwd/$dir
 cp -r $cwd/public/stylesheets/* $cwd/$dir/stylesheets
 cp -r $cwd/public/jars/* $cwd/$dir/jars
 sed -i -r "s|/images|../images|" $cwd/$dir/stylesheets/style.css
-cp -r $cwd/public/images/* $cwd/$dir/images
+cp -r $cwd/public/images/*.png $cwd/$dir/images
 #cp -r $cwd/public/javascripts/prototype.js $cwd/$dir/javascripts
 
 _get(){
