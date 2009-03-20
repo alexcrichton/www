@@ -32,10 +32,7 @@ a:hover {
 #header {
   background: url(images/headerback.png) repeat-x;
   border-bottom: 5px solid #066;
-  line-height: 65px;
-  font-size: 60px;
-  font-weight: bold;
-  padding: 10px 10px 0 10px;
+  line-height: 0;
 }
 
 #container {
