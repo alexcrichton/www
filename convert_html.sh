@@ -27,5 +27,6 @@ cd $cwd/$dir
 _get index.html
 _get java.html
 _get ruby.html
+_get testing.html
 
 #zip -r $cwd/$dir.zip $cwd/$dir/
