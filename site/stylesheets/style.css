@@ -28,9 +28,12 @@ a:hover {
   color: #fff;
   background-color: #000;
 }
+a:hover.nohighlight {
+  background: none;
+}
 
 #header {
-  background: url(images/headerback.png) repeat-x;
+  background: url(../images/headerback.png) repeat-x;
   border-bottom: 5px solid #066;
   line-height: 0;
 }
@@ -48,9 +51,10 @@ a:hover {
 }
 
 #sidebar {
+  padding-top: 10px;
 }
 
-h1.separator {
+.separator {
   border-bottom: 2px solid #066;
 }
 

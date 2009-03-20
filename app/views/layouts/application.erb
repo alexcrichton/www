@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>alex.code</title>
+  <%= stylesheet_link_tag 'screen', 'style' %>
+</head>
+<body>
+<div id="header">
+  <%= link_to image_tag('logo.png', :alt => 'code.alex'), '/index.html', :class => 'nohighlight' %>
+</div>
+
+<div id="container" class="span-24 push-1">
+  <div id="page" class="span-17">
+    <%= yield %>
+  </div>
+  <div id="sidebar" class="span-6">
+    <p>Hopefully this will get fancy soon</p>
+    <ul>
+      <li><%= link_to 'Home', '/index.html' %></li>
+      <li><%= link_to 'Java', '/java.html' %></li>
+      <li><%= link_to 'Ruby', '/ruby.html' %></li>
+    </ul>
+  </div>
+  <div id="footer">
+  </div>
+</div>
+<% if RAILS_ENV == 'production' %>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+            var pageTracker = _gat._getTracker("UA-7218359-5");
+            pageTracker._trackPageview();
+            } catch(err) {
+            }
+  </script>
+<% end %>
+</body>
+</html>
+
+

@@ -1,0 +1,619 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-20 00:31:25) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-20 00:31:59) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaticController#home (for 127.0.0.1 at 2009-03-20 00:32:12) [GET]
+Rendering template within layouts/application
+Rendering static/home
+
+ActionView::TemplateError (undefined method `stylesheet_include_tag' for #<ActionView::Base:0xb79ec05c>) on line #7 of app/views/layouts/application.erb:
+4: <head>
+5:   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+6:   <title>Greetings</title>
+7:   <%= stylesheet_include_tag 'screen', 'style' %>
+8:   <!--<link href="screen.css" media="screen" rel="stylesheet" type="text/css" />-->
+9:   <!--<link href="style.css" media="screen" rel="stylesheet" type="text/css" />-->
+10: </head>
+
+    app/views/layouts/application.erb:7
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (54.2ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaticController#home (for 127.0.0.1 at 2009-03-20 00:35:38) [GET]
+Rendering template within layouts/application
+Rendering static/home
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-20 00:35:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/headerback.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaticController#home (for 127.0.0.1 at 2009-03-20 00:35:59) [GET]
+Rendering template within layouts/application
+Rendering static/home
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-20 00:35:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/headerback.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaticController#home (for 127.0.0.1 at 2009-03-20 00:36:15) [GET]
+Rendering template within layouts/application
+Rendering static/home
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#home (for 127.0.0.1 at 2009-03-20 00:37:16) [GET]
+Rendering template within layouts/application
+Rendering static/home
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 00:39:41) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 00:42:13) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 00:42:47) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 00:45:59) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 00:48:52) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 22ms (View: 15, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 00:49:12) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 00:59:28) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:01:06) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:01:45) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:02:20) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:02:21) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:02:40) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:02:42) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:03:11) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:03:17) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:03:25) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:03:46) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:04:32) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:04:34) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:04:35) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:04:35) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:04:36) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:04:37) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:05:12) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:05:15) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:05:39) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:05:51) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:05:54) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:06:45) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:06:50) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:06:50) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:07:12) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:07:34) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:07:42) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:09:48) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:10:01) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:10:14) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:11:17) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:15:12) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:15:37) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:15:47) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:16:06) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:16:16) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:16:17) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:16:17) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:16:18) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:16:18) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:16:19) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:16:19) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:16:43) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:16:58) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:17:13) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:17:14) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:17:15) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:17:16) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:17:16) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:17:21) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:17:22) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:17:23) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:17:23) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:17:24) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:17:26) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:17:26) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 108ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:17:27) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:17:33) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 15ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:17:33) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:19:06) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:19:06) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:19:06) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:20:27) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:20:27) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:20:27) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:21:30) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:21:30) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:21:30) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:22:28) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:22:31) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:22:34) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:22:34) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:22:34) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:23:36) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:23:48) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:24:00) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:24:14) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:24:16) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:24:27) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/ruby.html]
+
+
+Processing StaticController#index (for 127.0.0.1 at 2009-03-20 01:24:57) [GET]
+Rendering template within layouts/application
+Rendering static/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/index.html]
+
+
+Processing StaticController#java (for 127.0.0.1 at 2009-03-20 01:24:57) [GET]
+Rendering template within layouts/application
+Rendering static/java
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/java.html]
+
+
+Processing StaticController#ruby (for 127.0.0.1 at 2009-03-20 01:24:58) [GET]
+Rendering template within layouts/application
+Rendering static/ruby
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ruby.html]
