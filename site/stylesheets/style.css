@@ -54,6 +54,13 @@ a:hover.nohighlight {
   padding-top: 10px;
 }
 
+#footer{
+  border-top: 2px solid #066;
+  text-align: center;
+  padding-top: 5px;
+  background: #d0ebd0;
+}
+
 .separator {
   border-bottom: 2px solid #066;
 }
