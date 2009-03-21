@@ -17,7 +17,8 @@ sed -i -r "s|/images|../images|" $cwd/$dir/stylesheets/*.css
 cp -r $cwd/public/jars/* $cwd/$dir/jars
 cp -r $cwd/public/images/*.png $cwd/$dir/images
 cp -r $cwd/public/javascripts/prototype.js $cwd/$dir/javascripts
-cp -r $cwd/public/javascripts/popup.js $cwd/$dir/javascripts
+cp -r $cwd/public/javascripts/menubar.js $cwd/$dir/javascripts
+cp -r $cwd/public/javascripts/application.js $cwd/$dir/javascripts
 
 _get(){
 	curl localhost:3000/$1 > $1
