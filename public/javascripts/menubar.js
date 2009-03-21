@@ -1,13 +1,18 @@
 var visible = [];
 
 function initMenus() {
-  var submenus = document.getElementById('topnav').getElementsByClassName('menu');
-  for (var i = 0; i < submenus.length; i++) {
-    submenus[i].hide();
-    submenus[i].onmouseout = maybeCloseMenu;
-    var el = document.getElementById(submenus[i].id.replace(/^sub-/, ""));
-    el.onmouseover = showSubmenu;
-    el.onmouseout = maybeCloseSubmenu;
+  var menubars = document.getElementsByClassName('menubar');
+  for (var i = 0; i < menubars.length; i++) {
+    var menus = menubars[i].getElementsByClassName('menu');
+    for (var j = 0; j < menus.length; j++) {
+      menus[j].hide();
+      menus[j].onmouseout = maybeCloseMenu;
+      var el = document.getElementById(menus[j].id.replace(/^sub-/, ""));
+      el.onmouseover = showSubmenu;
+      el.onmouseout = maybeCloseSubmenu;
+      if (!el.hasClassName("top") && !el.hasClassName("sub"))
+        el.addClassName("sub")
+    }
   }
 }
 
@@ -35,17 +40,19 @@ function showSubmenu(e) {
   if (e == null)
     e = window.event;
   var element = document.getElementById("sub-" + this.id);
-  if (this.hasClassName('top-menu-item')) {
-    element.style.left = this.offsetLeft + "px";
-    element.style.top = (this.offsetTop + this.offsetHeight) + "px";
+  element.show(); // have to show for the offsetParent to be set for some reason...
+  var l = absLeft(this) - absLeft(element.offsetParent);
+  var t = absTop(this) - absTop(element.offsetParent);
+  if (this.hasClassName('top')) {
+    element.style.left = l + "px";
+    element.style.top = (t + this.offsetHeight) + "px";
   } else {
-    element.style.left = (this.offsetLeft + this.offsetWidth) + "px";
-    element.style.top = this.offsetTop + "px";
+    element.style.left = (l + this.offsetWidth) + "px";
+    element.style.top = t + "px";
   }
   element.style.zIndex = 1;
   if (visible[visible.length - 1] != element)
     visible.push(element);
-  element.show();
 }
 
 function noVisibleSubs() {
@@ -81,4 +88,4 @@ function inDiv(x, y, el) {
   return x >= l && x < l + el.offsetWidth && y >= t && y < t + el.offsetHeight;
 }
 
-window.onload = initMenus;
+addLoadEvent(initMenus);

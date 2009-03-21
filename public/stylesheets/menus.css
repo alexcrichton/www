@@ -1,58 +1,55 @@
-#topnav {
-  height: 25px;
+.menubar {
 }
 
-#topnav a {
+.menubar .menu {
+  height: auto;
+  position: absolute;
+  background: #fff; /*border: 2px solid #066;*/
+/* BAD BORDER! */
+}
+
+.menubar .item {
+  margin: 0;
+  width: 115px;
+  padding-left: 5px;
+  height: 25px;
+  background: url(/images/item.png);
+}
+
+.menubar .item:hover {
+  background: url(/images/item-s.png);
+}
+
+.menubar .sub {
+  background: url(/images/sitem.png);
+}
+
+.menubar .sub:hover {
+  background: url(/images/sitem-s.png);
+}
+
+.menubar a {
   text-decoration: none;
 }
 
-#topnav a:hover {
+.menubar a:hover {
   background: none;
   color: inherit;
 }
 
-#topnav .top-menu-item {
+.menubar .top {
   width: 80px;
+  padding: 0;
   text-align: center;
   float: left;
-  height: inherit;
-  background: url(/images/topnav.png);
+  background: url(/images/top.png);
 }
 
-#topnav .top-menu-item:hover {
-  background: url(/images/topnav-s.png);
+.menubar .top:hover {
+  background: url(/images/top-s.png);
 }
-#topnav .top-menu-item a:hover {
+
+.menubar .top a:hover {
   color: #fff;
 }
 
-#topnav .menuitem {
-  margin: 0;
-  width: 115px;
-  padding-left: 5px;
-  height: 25px;
-  background: url(/images/menu.png);
-}
-
-#topnav .menuitem:hover {
-  background: url(/images/menu-s.png);
-}
-
-#topnav .submenuitem {
-  margin: 0;
-  width: 115px;
-  padding-left: 5px;
-  height: 25px;
-  background: url(/images/smenu.png);
-}
-
-#topnav .submenuitem:hover {
-  background: url(/images/smenu-s.png);
-}
-
-#topnav .menu {
-  height: auto;
-  position: absolute;
-  background: #fff;
-  /*border: 2px solid #066;*/ /* BAD! */
-}
