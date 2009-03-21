@@ -1,0 +1,58 @@
+#topnav {
+  height: 25px;
+}
+
+#topnav a {
+  text-decoration: none;
+}
+
+#topnav a:hover {
+  background: none;
+  color: inherit;
+}
+
+#topnav .top-menu-item {
+  width: 80px;
+  text-align: center;
+  float: left;
+  height: inherit;
+  background: url(../images/topnav.png);
+}
+
+#topnav .top-menu-item:hover {
+  background: url(../images/topnav-s.png);
+}
+#topnav .top-menu-item a:hover {
+  color: #fff;
+}
+
+#topnav .menuitem {
+  margin: 0;
+  width: 115px;
+  padding-left: 5px;
+  height: 25px;
+  background: url(../images/menu.png);
+}
+
+#topnav .menuitem:hover {
+  background: url(../images/menu-s.png);
+}
+
+#topnav .submenuitem {
+  margin: 0;
+  width: 115px;
+  padding-left: 5px;
+  height: 25px;
+  background: url(../images/smenu.png);
+}
+
+#topnav .submenuitem:hover {
+  background: url(../images/smenu-s.png);
+}
+
+#topnav .menu {
+  height: auto;
+  position: absolute;
+  background: #fff;
+  /*border: 2px solid #066;*/ /* BAD! */
+}

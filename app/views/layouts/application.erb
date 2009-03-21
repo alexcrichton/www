@@ -4,11 +4,17 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>code.alex</title>
-  <%= stylesheet_link_tag 'screen', 'style' %>
+  <%= stylesheet_link_tag 'screen', 'style', 'menus' %>
+  <%= javascript_include_tag 'popup', 'prototype' %>
 </head>
 <body>
 <div id="header">
-  <%= link_to image_tag('logo.png', :alt => 'code.alex'), '/index.html', :class => 'nohighlight' %>
+  <div id="logo">
+    <%= link_to image_tag('logo.png', :alt => 'code.alex'), '/index.html', :class => 'nohighlight' %>
+  </div>
+  <div id="topnav">
+    <%= render 'layouts/topnav' %>
+  </div>
 </div>
 
 <div id="container" class="span-24 push-1">
@@ -16,18 +22,15 @@
     <%= yield %>
   </div>
   <div id="sidebar" class="span-6">
-    <p>Hopefully this will get fancy soon</p>
-    <ul>
-      <li><%= link_to 'Home', '/index.html' %></li>
-      <li><%= link_to 'Java', '/java.html' %></li>
-      <li><%= link_to 'Ruby', '/ruby.html' %></li>
-      <li><%= link_to 'Testing', '/testing.html' %></li>
-    </ul>
+    <p>
+      You didn't expect links over here did you?<br/>
+      That's what the fancy menus are for...
+    </p>
   </div>
   <div id="footer" class="span-24">
     <a href="http://validator.w3.org/check?uri=referer" class="nohighlight"><img
     src="http://www.w3.org/Icons/valid-xhtml10-blue"
-    alt="Valid XHTML 1.0 Strict" height="31" width="88"/></a>
+    alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
   </div>
 </div>
 <% if RAILS_ENV == 'production' %>
