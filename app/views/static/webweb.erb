@@ -1,5 +1,10 @@
-<h1 class="separator">Interwebs</h1>
-<p>
-  Some stuff I've done on the Interblag will go here... I'm tired though right now. As a hint, every portion of this
-  site was coded from scratch... except for Rails, because that would be insane
-</p>
+<h1 class="separator">Interhacks</h1>
+<h2 class="separator">Need Unfiltered, Free
+  Blagospheres? <%= link_to_function '[show/hide]', "$('blagosphere').toggle()" %></h2>
+<div id="blagosphere" style="display:none">
+  <%= render 'free_webs' %>
+</div>
+<h2 class="separator">Is WEP safe? <%= link_to_function '[show/hide]', "$('wep').toggle()" %></h2>
+<div id="wep" style="display:none">
+  <%= render 'wep' %>
+</div>

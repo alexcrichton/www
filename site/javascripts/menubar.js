@@ -41,6 +41,7 @@ function showSubmenu(e) {
     e = window.event;
   var element = document.getElementById("sub-" + this.id);
   element.show(); // have to show for the offsetParent to be set for some reason...
+  element.style.display = "block";
   var l = absLeft(this) - absLeft(element.offsetParent);
   var t = absTop(this) - absTop(element.offsetParent);
   if (this.hasClassName('top')) {
@@ -53,16 +54,6 @@ function showSubmenu(e) {
   element.style.zIndex = 1;
   if (visible[visible.length - 1] != element)
     visible.push(element);
-}
-
-function noVisibleSubs() {
-  if (document.getElementById(this.id) == null)
-    return false
-  var els = document.getElementById(this.id).getElementsByClassName('menu');
-  for (var i = 0; i < els.length; i++)
-    if (els[i].visible())
-      return false;
-  return true;
 }
 
 function absLeft(el) {

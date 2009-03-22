@@ -1,0 +1,137 @@
+<div>
+  SSH tunnel out! Applications probably can't filter encrypted traffic (they definitely can't read it).
+  <br /><br/>
+  Now this assumes a few things:
+  <ol>
+    <li>You have an SSH server w/ free unfiltered internet and control over the SSH daemon</li>
+    <li>You have mastered the concept of common sense</li>
+    <li>You use Linux, or are smart enough to understand the instructions anyway</li>
+  </ol>
+</div>
+<hr/>
+<h4>1. Create the Connection...</h4>
+
+<p>
+  This is ridiculously simple, yet will probably not work...
+</p>
+<pre>
+  ssh <em>hostname</em>
+</pre>
+<p>
+  If it worked, huzzah! You're lucky... go on to next section. <br />
+  If not, see if the items below can't help.
+</p>
+<%= render 'tunnel_caveats' %>
+<hr />
+<h4>2. Create the Tunnel, Two Paths</h4>
+
+<div>
+  Ok, so you've now successfully ssh'd out... What now? Well because all SSH connections are encrypted (duh), they
+  aren't
+  filtered, meaning you just need to direct all your connections through a tunnel!<br />
+  <br />
+  I'm assuming here you have a connection, and whatever ssh code is needed to be connected will be represented
+  by the <code><em>hostname</em></code> identifier. This is either the <code>user@host</code> syntax or the alias
+  you've got or whatever.
+</div>
+<strong>The SOCKS Method</strong> <%= link_to_function '[show/hide]', "$('socks').toggle()" %>
+<div id="socks" style="display:none">
+  In this method, you use the SSH connection as a SOCKS proxy, either version 4 or 5. All the SOCKS proxy needs
+  is an open port on your computer it can listen on. I like 3128.
+  <pre>
+      ssh -vgND <em>port</em> <em>hostname</em>
+  </pre>
+  <ul>
+    <li><code>-v</code> means verbose, you see lots of stuff, this is optional</li>
+    <li><code>-g</code> open the port for outside connections (allow your friends), this is optional</li>
+    <li>
+      <code>-N</code> don't execute a command on the server, just sit here (allows ctrl+c termination), this is
+      optional
+    </li>
+    <li><code>-D</code> tells SSH to be a SOCKS proxy on the specified <em>port</em></li>
+  </ul>
+  <pre>
+    # examples
+
+    # Create a SOCKS proxy on port 3128 tunneled to remote.com
+    ssh -D 3128 remote.com
+
+    # Connect to remote.com with user bill and have the SOCKS
+    # proxy on port 6009. The command will have verbose output
+    # and nothing will be executed server-side, meaning the terminal
+    # will just blather what it's doing
+    ssh -vND 6009 bill@remote.com
+
+    # Connect to remote host with alias thing in the config file
+    # and have the SOCKS proxy/tunnel on port 8903. Also open
+    # a port on this computer so friends may use the tunnel
+    ssh -gD 8903 thing
+  </pre>
+  Now with a SOCKS proxy/tunnel running on your computer, just set your application's SOCKSv4 or SOCKSv5 proxy to the
+  hostname of <code>localhost</code> and port of whatever you specified. If had the <code>-g</code> option, your
+  friends
+  can use this SOCKS proxy as well by changing the proxy hostname on their applications to your IP address.<br />
+  <br />
+  Congratulations, you now have free, secure, unfiltered webwebs!
+</div>
+
+<br />
+<strong>The HTTP Proxy Method</strong> <%= link_to_function '[show/hide]', "$('http').toggle()" %>
+<div id="http" style="display:none;">
+  SOCKS not good enough for you? You need shoes as well? I wouldn't go this route unless you have to. SOCKS is much
+  more convenient. The only reason you'd be here is if your application doesn't have SOCKS proxy support. Well shoot.
+  So the idea behind this method is to tunnel all requests to a proxy on the other end of the SSH connection. This
+  way,
+  applications which use an HTTP proxy, nearly all of them, will now have access to free, unfiltered internet.
+  <br /><br />
+  <strong>Here's what to do:</strong>
+
+  <p>
+    Get a remote proxy running. If you have a proxy known already, just skip this. Otherwise, download
+    a client like Squid, and get it up and running on your server.
+  </p>
+
+  <p>Create the tunnel:</p>
+  <pre>
+    ssh -gvNL <em>localport</em>:<em>proxyhostname</em>:<em>proxyport</em> <em>hostname</em>
+  </pre>
+  <ul>
+    <li><code>-v</code> means verbose, you see lots of stuff, this is optional</li>
+    <li><code>-g</code> open the port for outside connections (allow your friends), this is optional</li>
+    <li>
+      <code>-N</code> don't execute a command on the server, just sit here (allows ctrl+c termination), this is
+      optional
+    </li>
+    <li>
+      <code>-L</code> complicated... This tells SSH to forward all requests on your machine's <em>localport</em>
+      to the proxy at <em>proxyhostname</em>:<em>proxyport</em>. The proxy could be running on the server, meaning the
+      hostname would be localhost, or it could be any remote proxy which the server can connect to. Either way works
+      fine.
+    </li>
+  </ul>
+  <pre>
+    # examples
+
+    # listen on 3128 on this computer and forward to a proxy on the server
+    # at remote.com at port 3128
+    ssh -L 3128:localhost:3128 remote.com
+
+    # Connect to a server at remote.com with the user bill. Listen on 4000
+    # on this computer and forward to a proxy on the server
+    # at port 3128, with verbose output. Also, just sit in
+    # the terminal, blathering what's going on.
+    ssh -vNL 4000:localhost:3128 bill@remote.com
+
+    # Connect to a server whose options are specified in the config file and
+    # has the alias of remote. Also, listen on 3129 on this computer and
+    # forward to the remote proxy thing.com on port 4090. Also open a port
+    # on this computer to allow other connections to share this tunnel.
+    ssh -gL 3129:thing.com:4090 remote
+  </pre>
+  Now with a http proxy running on your computer, just set your application's http proxy to the
+  hostname of <code>localhost</code> and port of whatever you specified. If had the <code>-g</code> option, your
+  friends
+  can use this http proxy as well by changing the proxy hostname on their applications to your IP address.<br />
+  <br />
+  Congratulations, you now have free, secure, unfiltered webwebs!
+</div>
