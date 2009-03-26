@@ -5,16 +5,16 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>code.alex</title>
   <%= stylesheet_link_tag 'screen', 'style', 'menus' %>
-  <%= javascript_include_tag 'application', 'menubar', 'prototype' %>
+  <%= javascript_include_tag 'jquery', 'menubar' %>
 </head>
 <body>
 <div id="header">
   <div id="logo">
     <%= link_to image_tag('logo.png', :alt => 'code.alex'), '/index.html', :class => 'nohighlight' %>
   </div>
-  <div id="topnav" class="menubar">
+  <ul id="topnav" class="menubar">
     <%= render 'layouts/topnav' %>
-  </div>
+  </ul>
 </div>
 
 <div id="container" class="span-24 push-1">

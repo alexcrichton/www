@@ -1,44 +1,48 @@
-.menubar {
-}
-
-.menubar .menu {
-  height: auto;
-  position: absolute;
-  background: #fff; /*border: 2px solid #066;*/
-  display: none; /* hide all at start */
-/* BAD BORDER! */
-}
-
-.menubar .item {
+ul.menubar {
   margin: 0;
-  width: 115px;
-  padding-left: 5px;
+  list-style: none;
+}
+
+ul.menubar ul {
+  list-style: none outside;
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 500;
+  width: 120px;
+}
+
+ul.menubar li {
+  margin: 0;
   height: 25px;
+  padding-left: 5px;
+  text-align: left;
   background: url(../images/item.png);
 }
 
-.menubar .item:hover {
+ul.menubar li:hover {
   background: url(../images/item-s.png);
 }
 
-.menubar .sub {
+ul.menubar .sub {
   background: url(../images/sitem.png);
 }
 
-.menubar .sub:hover {
+ul.menubar .sub:hover {
   background: url(../images/sitem-s.png);
 }
 
-.menubar a {
+ul.menubar a {
   text-decoration: none;
 }
 
-.menubar a:hover {
+ul.menubar a:hover {
   background: none;
   color: inherit;
 }
 
-.menubar .top {
+ul.menubar .top {
   width: 80px;
   padding: 0;
   text-align: center;
@@ -46,11 +50,11 @@
   background: url(../images/top.png);
 }
 
-.menubar .top:hover {
+ul.menubar .top:hover {
   background: url(../images/top-s.png);
 }
 
-.menubar .top a:hover {
+ul.menubar .top a:hover {
   color: #fff;
 }
 

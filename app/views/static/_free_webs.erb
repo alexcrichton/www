@@ -34,7 +34,7 @@
   by the <code><em>hostname</em></code> identifier. This is either the <code>user@host</code> syntax or the alias
   you've got or whatever.
 </div>
-<strong>The SOCKS Method</strong> <%= link_to_function '[show/hide]', "$('socks').toggle()" %>
+<strong>The SOCKS Method</strong> <%= link_to_function '[show/hide]', "$('#socks').slideToggle()" %>
 <div id="socks" style="display:none">
   In this method, you use the SSH connection as a SOCKS proxy, either version 4 or 5. All the SOCKS proxy needs
   is an open port on your computer it can listen on. I like 3128.
@@ -76,7 +76,7 @@
 </div>
 
 <br />
-<strong>The HTTP Proxy Method</strong> <%= link_to_function '[show/hide]', "$('http').toggle()" %>
+<strong>The HTTP Proxy Method</strong> <%= link_to_function '[show/hide]', "$('#http').slideToggle()" %>
 <div id="http" style="display:none;">
   SOCKS not good enough for you? You need shoes as well? I wouldn't go this route unless you have to. SOCKS is much
   more convenient. The only reason you'd be here is if your application doesn't have SOCKS proxy support. Well shoot.

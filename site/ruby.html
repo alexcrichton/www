@@ -5,68 +5,76 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>code.alex</title>
   <link href="stylesheets/screen.css?1237521152" media="screen" rel="stylesheet" type="text/css" />
-<link href="stylesheets/style.css?1237657410" media="screen" rel="stylesheet" type="text/css" />
-<link href="stylesheets/menus.css?1237660112" media="screen" rel="stylesheet" type="text/css" />
-  <script src="javascripts/application.js?1237659006" type="text/javascript"></script>
-<script src="javascripts/menubar.js?1237690599" type="text/javascript"></script>
-<script src="javascripts/prototype.js?1237526494" type="text/javascript"></script>
+<link href="stylesheets/style.css?1238036462" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/menus.css?1238037757" media="screen" rel="stylesheet" type="text/css" />
+  <script src="javascripts/jquery.js?1238018364" type="text/javascript"></script>
+<script src="javascripts/menubar.js?1238037684" type="text/javascript"></script>
 </head>
 <body>
 <div id="header">
   <div id="logo">
     <a href="index.html" class="nohighlight"><img alt="code.alex" src="images/logo.png?1237526184" /></a>
   </div>
-  <div id="topnav" class="menubar">
-    <div id="home" class="item top"><a href="index.html">Home</a></div>
-<div id="java" class="item top"><a href="java.html">Java</a></div>
-<div id="sub-java" class="menu">
-  <div id="apps" class="item"><a href="java.html#apps">Applications</a></div>
-  <div id="sub-apps" class="menu">
-    <div class="item"><a href="jars/mds.jar">mds</a></div>
-    <div class="item"><a href="jars/calculator.jar">calculator</a></div>
-    <div class="item"><a href="jars/ciphers.jar">ciphers</a></div>
-    <div class="item"><a href="jars/himcm07.jar">himcm07</a></div>
-    <div class="item"><a href="jars/lathe.jar">lathe</a></div>
-    <div class="item"><a href="jars/mastermind.jar">mastermind</a></div>
-    <div id="spell" class="item"><a href="jars/numberspeller.jar">numberspeller</a></div>
-    <div id="sub-spell" class="menu">
-      <div class="item"><a href="bignum.html">Bignum</a></div>
-    </div>
-    <div class="item"><a href="jars/pong.jar">pong</a></div>
-    <div class="item"><a href="jars/riemann.jar">riemann</a></div>
-    <div class="item"><a href="jars/sudoku.jar">sudoku</a></div>
-    <div class="item"><a href="jars/tetris.jar">tetris</a></div>
-    <div class="item"><a href="jars/track.jar">track</a></div>
-  </div>
-  <div class="item"><a href="java.html#competitions">Competitions</a></div>
-  <div class="item"><a href="java.html#litvin">Litvin</a></div>
-  <div class="item"><a href="java.html#eclipse">Eclipse</a></div>
-</div>
-<div id="ruby" class="item top"><a href="ruby.html">Ruby</a></div>
-<div id="web" class="item top"><a href="webweb.html">Blagoblag</a></div>
-<div id="testing" class="item top"><a href="testing.html">Testing</a></div>
-<div id="sub-testing" class="menu">
-  <div id="this" class="item">This</div>
-  <div id="sub-this" class="menu">
-    <div id="is" class="item">is</div>
-    <div id="sub-is" class="menu">
-      <div id="a" class="item">a</div>
-      <div id="sub-a" class="menu">
-        <div id="long" class="item">long</div>
-        <div id="sub-long" class="menu">
-          <div id="menu" class="item">menu</div>
-          <div id="sub-menu" class="menu">
-            <div class="item">congrats on</div>
-            <div class="item">reaching the</div>
-            <div class="item">end</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <ul id="topnav" class="menubar">
+    <li class="top"><a href="index.html">Home</a></li>
+<li class="top"><a href="java.html">Java</a>
+  <ul class="down">
+    <li class="sub"><a href="java.html#apps">Applications</a>
+      <ul>
+        <li><a href="jars/mds.jar">mds</a></li>
+        <li><a href="jars/calculator.jar">calculator</a></li>
+        <li><a href="jars/ciphers.jar">ciphers</a></li>
+        <li><a href="jars/himcm07.jar">himcm07</a></li>
+        <li><a href="jars/lathe.jar">lathe</a></li>
+        <li><a href="jars/mastermind.jar">mastermind</a></li>
+        <li class="sub"><a href="jars/numberspeller.jar">numberspeller</a>
+          <ul>
+            <li><a href="bignum.html">Bignum</a></li>
+          </ul>
+        </li>
+        <li><a href="jars/pong.jar">pong</a></li>
+        <li><a href="jars/riemann.jar">riemann</a></li>
+        <li><a href="jars/sudoku.jar">sudoku</a></li>
+        <li><a href="jars/tetris.jar">tetris</a></li>
+        <li><a href="jars/track.jar">track</a></li>
+      </ul>
+    </li>
+    <li><a href="java.html#competitions">Competitions</a></li>
+    <li><a href="java.html#litvin">Litvin</a></li>
+    <li><a href="java.html#eclipse">Eclipse</a></li>
+  </ul>
+</li>
+<li class="top"><a href="ruby.html">Ruby</a></li>
+<li class="top"><a href="webweb.html">Blagoblag</a></li>
+<li class="top"><a href="testing.html">Testing</a>
+  <ul class="down">
+    <li class="sub">This
+      <ul>
+        <li class="sub">is
+          <ul>
+            <li class="sub">a
+              <ul>
+                <li class="sub">long
+                  <ul>
+                    <li class="sub">menu
+                      <ul>
+                        <li>congrats on</li>
+                        <li>reaching the</li>
+                        <li>end</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
 
-  </div>
+  </ul>
 </div>
 
 <div id="container" class="span-24 push-1">

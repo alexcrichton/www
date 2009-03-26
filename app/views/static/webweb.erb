@@ -1,10 +1,6 @@
 <h1 class="separator">Interhacks</h1>
 <h2 class="separator">Need Unfiltered, Free
-  Blagospheres? <%= link_to_function '[show/hide]', "$('blagosphere').toggle()" %></h2>
+  Blagospheres? <%= link_to_function '[show/hide]', "$('#blagosphere').slideToggle('fast')" %></h2>
 <div id="blagosphere" style="display:none">
   <%= render 'free_webs' %>
-</div>
-<h2 class="separator">Is WEP safe? <%= link_to_function '[show/hide]', "$('wep').toggle()" %></h2>
-<div id="wep" style="display:none">
-  <%= render 'wep' %>
 </div>

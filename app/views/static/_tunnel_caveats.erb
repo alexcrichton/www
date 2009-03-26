@@ -1,4 +1,4 @@
-<strong>Port 22 blocked?</strong> <%= link_to_function '[show/hide]', "$('port22').toggle()" %>
+<strong>Port 22 blocked?</strong> <%= link_to_function '[show/hide]', "$('#port22').slideToggle()" %>
 <div id="port22" style="display:none;">
   Try a different one! Most likely port 443. It's normally dedicated for SSL traffic and is rarely blocked, unless they
   don't want you doing secure things online for some reason... Just make sure the SSH server is listening on this port.
@@ -9,7 +9,7 @@
 
 <br />
 <strong>Connections dropped and must use proxy to get
-  Webblags?</strong> <%= link_to_function '[show/hide]', "$('proxy').toggle()" %>
+  Webblags?</strong> <%= link_to_function '[show/hide]', "$('#proxy').slideToggle()" %>
 <div id="proxy" style="display:none;">
   A nifty tool called <a href="http://www.agroman.net/corkscrew/">corkscrew</a> is available to pipe SSH connections
   through proxies. To enable the use
@@ -31,7 +31,7 @@
 
 <br />
 <strong>Connections dropped and proxy requires simple
-  authentication?</strong> <%= link_to_function '[show/hide]', "$('simple').toggle()" %>
+  authentication?</strong> <%= link_to_function '[show/hide]', "$('#simple').slideToggle()" %>
 <div id="simple" style="display:none;">
   If basic authentication is used, then on the <code>ProxyCommand</code> line in the <code>.ssh/config</code> file,
   after <code>%p</code> you'll have to add a filename, like <code>~/.ssh/authfile</code> which has your username
@@ -56,7 +56,7 @@
 
 <br />
 <strong>Connections dropped and proxy requires NTLM
-  authentication?</strong> <%= link_to_function '[show/hide]', "$('ntlm').toggle()" %>
+  authentication?</strong> <%= link_to_function '[show/hide]', "$('#ntlm').slideToggle()" %>
 <div id="ntlm" style="display:none">
   If NTLM authentication is used, then things get more interesting. Corkscrew can't do it, so use another proxy! A
   little program called <a href="http://sourceforge.net/project/showfiles.php?group_id=197861">CNTLM</a> is it's own
@@ -64,7 +64,7 @@
   With this, just direct your corkscrew to the CNTLM proxy, hostname being localhost, your computer. Of course you'll
   have to configure CNTLM as well and start it up beforehand and leave it running throughout...
   <hr />
-  Example <code>/etc/cntlm.conf</code>: <%= link_to_function '[show/hide]', "$('cntlmconf').toggle()" %>
+  Example <code>/etc/cntlm.conf</code>: <%= link_to_function '[show/hide]', "$('#cntlmconf').slideToggle()" %>
   <pre id="cntlmconf" style="display:none;">
     #
     # Cntlm Authentication Proxy Configuration
@@ -139,7 +139,7 @@
 </div>
 
 <br />
-<strong>Connection still not made?</strong>  <%= link_to_function '[show/hide]', "$('help').toggle()" %>
+<strong>Connection still not made?</strong>  <%= link_to_function '[show/hide]', "$('#help').slideToggle()" %>
 <div id="help" style="display:none">
   I guess I hadn't thought of that setup... Try searching the internet and please let me know. I'd be interested
   in knowing your setup and what more could be needed. If I can solve, I'll add here :D<br/>
