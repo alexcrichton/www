@@ -39,7 +39,7 @@ set :deploy_to, "/srv/www/#{application}"
 #    run "cd #{deploy_to}/current; rake gems:install"
 #  end
 #end
-namespace :deply do
+namespace :deploy do
 	[:setup, :update, :update_code, :finalize_update, :symlink, :restart].each do |dflt_task|
 		task dflt_task do
 		end
