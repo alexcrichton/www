@@ -39,7 +39,12 @@ set :deploy_to, "/srv/www/#{application}"
 #    run "cd #{deploy_to}/current; rake gems:install"
 #  end
 #end
-
+namespace :deply do
+	[:setup, :update, :update_code, :finalize_update, :symlink, :restart].each do |dflt_task|
+		task dflt_task do
+		end
+	end
+end
 set :web_server, "academycommunity.com"
 
 #role :app, web_server
