@@ -43,7 +43,7 @@ set :deploy_to, "/srv/www/#{application}"
 set :web_server, "academycommunity.com"
 
 #role :app, web_server
-#role :web, web_server
+role :web, web_server
 #role :db,  web_server, :primary => true
 
 #thin_app = "thin-tix.academycommunity.com"
