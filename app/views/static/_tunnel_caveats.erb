@@ -139,6 +139,13 @@
 </div>
 
 <br />
+<strong>Hostname resolved incorrectly?</strong>  <%= link_to_function '[show/hide]', "$('#hostname').slideToggle()" %>
+<div id="hostname" style="display:none">
+  Working on this... Probably something about connecting and registering with the network... One possible solution
+  may be MAC Address spoofing to fake being an authenticated user... no guarantees though.
+</div>
+
+<br />
 <strong>Connection still not made?</strong>  <%= link_to_function '[show/hide]', "$('#help').slideToggle()" %>
 <div id="help" style="display:none">
   I guess I hadn't thought of that setup... Try searching the internet and please let me know. I'd be interested
