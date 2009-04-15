@@ -34,10 +34,16 @@ _get testing.html
 _get webweb.html
 
 cd $cwd
-git checkout live || return 1
-git rm -rf *
-cp -r $tmp/* .
-git add .
+echo -n "Checkout live branch? [Y/n]"
+read response
+if [ "$response" != "n" ]; then
+  git checkout live || exit 1
+  find . | grep -v .git | git rm -r
+  cp -r $tmp/* .
+  git add .
+else
+  exit 0
+fi
 echo -n "Push changes? [Y/n] "
 read response
 if [ "$response" != "n" ]; then
