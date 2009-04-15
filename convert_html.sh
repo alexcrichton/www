@@ -38,7 +38,7 @@ echo -n "Checkout live branch? [Y/n]"
 read response
 if [ "$response" != "n" ]; then
   git checkout live || exit 1
-  find . | grep -v .git | git rm -r
+  find . | grep -v .git | xargs git rm -r
   cp -r $tmp/* .
   git add .
 else
