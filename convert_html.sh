@@ -38,21 +38,21 @@ echo -n "Checkout live branch? [Y/n]"
 read response
 if [ "$response" != "n" ]; then
   git checkout live || exit 1
-  find . | grep -v .git | xargs git rm -r
+ # find . | grep -v .git | xargs git rm -r
   cp -r $tmp/* .
   git add .
 else
   exit 0
 fi
-echo -n "Push changes? [Y/n] "
+echo -n "Commit changes? [Y/n]"
 read response
 if [ "$response" != "n" ]; then
-	echo "Commit message?"
-	read message
-	git commit -am "$message"
-	git push
+  echo "Commit message?"
+  read message
+  git commit -am "$message"
+  echo -n "Push changes? [Y/n] "
+  read response
+  [[ "$response" != "n" ]] &&	git push
 fi
 git checkout master
-if [ "$response" != "n" ]; then
-  cap deploy
-fi
+[[ "$response" != "n" ]] && cap deploy
