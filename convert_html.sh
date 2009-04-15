@@ -53,3 +53,6 @@ if [ "$response" != "n" ]; then
 	git push
 fi
 git checkout master
+if [ "$response" != "n" ]; then
+  cap deploy
+fi
