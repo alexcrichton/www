@@ -11,7 +11,7 @@
 ----------------------------------------------------------------------- */
 
 /* ie.css */
-body {text-align:center;}
+/*body {text-align:center;}*/
 .container {text-align:left;}
 * html .column {overflow-x:hidden;}
 * html legend {margin:-18px -8px 16px 0;padding:0;}
@@ -20,3 +20,20 @@ sup {vertical-align:text-top;}
 sub {vertical-align:text-bottom;}
 html>body p code {*white-space:normal;}
 hr {margin:-8px auto 11px;}
+ul, ul li{
+  text-align: left;
+}
+
+#timeline #era1 {
+  padding-top: 50px;
+}
+
+#timeline #era2 {
+  padding-top: 50px;
+}
+
+#timeline #era3 {
+  padding-top: 50px;
+}
+
+

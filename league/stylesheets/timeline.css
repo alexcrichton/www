@@ -1,0 +1,49 @@
+#timeline .line {
+  border: 1px solid #000;
+  width: 820px;
+  height: 18px;
+  margin: 30px auto;
+  margin-top: 50px;
+}
+
+#timeline .line span {
+  margin-top: -30px;
+  margin-left: -20px;
+  position: absolute;
+}
+
+#timeline .year {
+  margin: -1px 0 0 -10px;
+  padding: 0;
+  background-image: url(../images/timeline-button-ns.png);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  display: block;
+}
+
+#timeline .year:hover {
+  background-image: url(../images/dot3.png);
+}
+
+#timeline .info {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#timeline img {
+  margin-right: 10px;
+  float: left;
+}
+
+#timeline .yearinfo h4 {
+  color: #066;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+#timeline .yearinfo span {
+  color: #066;
+}
+

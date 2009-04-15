@@ -10,16 +10,16 @@ body {
   display: none;
 }
 
-#footer {
-  display: none;
-}
+/*#footer {*/
+  /*display: none;*/
+/*}*/
 
-#right {
-  display: none;
-  visibility: collapse;
-}
+/*#right {*/
+  /*display: none;*/
+  /*visibility: collapse;*/
+/*}*/
 
 div.main {
   border-right: 0;
-  width: 100%;
+  /*width: 100%;*/
 }
