@@ -3,7 +3,7 @@ require 'erb'
 set :application, "alex.academycommunity.com"
 
 set :scm, :git
-set :repository,  "git://github.com/alexc605/alex_web.git"
+set :repository,  "git://github.com/alexcrichton/alex_web.git"
 set :branch, "live"
 set :deploy_via, :remote_cache
 
