@@ -25,6 +25,8 @@ namespace :deploy do
   task :stop do
   end
 end
+namespace :db do
+end
 set :web_server, "academycommunity.com"
 set :keep_releases, 2
 
