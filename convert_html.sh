@@ -32,6 +32,7 @@ _get java.html
 _get ruby.html
 _get testing.html
 _get webweb.html
+_get bignum.html
 
 cd $cwd
 echo -n "Checkout live branch? [Y/n]"
