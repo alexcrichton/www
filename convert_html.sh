@@ -8,11 +8,8 @@ mkdir -p $tmp/images || exit 1
 mkdir $tmp/stylesheets
 mkdir $tmp/javascripts
 
-cp -r league $tmp
-cp public/favicon.ico $tmp
 cp -r public/stylesheets/* $tmp/stylesheets
 sed -i -r "s|/images|../images|" $tmp/stylesheets/*.css
-#cp -r public/images/*.png $tmp/images
 cp -r public/javascripts/jquery.js $tmp/javascripts
 
 _get(){
