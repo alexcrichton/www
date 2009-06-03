@@ -3,7 +3,7 @@
 
 tmp=/tmp/alex-webstuff
 cwd=`pwd`
-rm -r $tmp || exit 1
+rm -rf $tmp
 mkdir -p $tmp/images || exit 1
 mkdir $tmp/stylesheets
 mkdir $tmp/javascripts
