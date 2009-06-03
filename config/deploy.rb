@@ -1,6 +1,6 @@
 require 'erb'
 
-set :application, "alex.academycommunity.com"
+set :application, "alexcrichton.com"
 
 set :scm, :git
 set :repository,  "git://github.com/alexcrichton/alex_web.git"
