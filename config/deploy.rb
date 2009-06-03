@@ -15,13 +15,13 @@ set :use_sudo, false
 # via the :deploy_to variable:
 set :deploy_to, "/srv/www/#{application}"
 
-after 'deploy:update_code', 'deploy:symlink'
+after 'deploy:update_code', 'deploy:symlink_league'
 
 name
 
 namespace :deploy do
-  task :symlink do
-    run "ln -sf #{deploy_to}/league-site #{release_path}"
+  task :symlink_league do
+    run "ln -sf #{deploy_to}/league-site #{release_path}/league"
   end
   task :finalize_update do
   end
