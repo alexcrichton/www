@@ -3,8 +3,8 @@
 
 tmp=/tmp/alex-webstuff
 cwd=`pwd`
-rm -r $tmp || return 1
-mkdir -p $tmp/images || return 1
+rm -r $tmp || exit 1
+mkdir -p $tmp/images || exit 1
 mkdir $tmp/jars
 mkdir $tmp/stylesheets
 mkdir $tmp/javascripts
@@ -16,8 +16,6 @@ sed -i -r "s|/images|../images|" $tmp/stylesheets/*.css
 cp -r public/jars/* $tmp/jars
 cp -r public/images/*.png $tmp/images
 cp -r public/javascripts/jquery.js $tmp/javascripts
-cp -r public/javascripts/menubar.js $tmp/javascripts
-#cp -r public/javascripts/application.js $tmp/javascripts
 
 _get(){
 	curl localhost:3000/$1 > $1
@@ -28,11 +26,6 @@ _get(){
 cd $tmp
 
 _get index.html
-_get java.html
-_get ruby.html
-_get testing.html
-_get webweb.html
-_get bignum.html
 
 cd $cwd
 echo -n "Checkout live branch? [Y/n]"

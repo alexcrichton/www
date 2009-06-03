@@ -1,4 +1,5 @@
 .idea
+.idea/*
 log
 tmp
 .*.swp
