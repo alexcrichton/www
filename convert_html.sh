@@ -10,7 +10,8 @@ mkdir $tmp/javascripts
 
 cp -r public/stylesheets/* $tmp/stylesheets
 sed -i -r "s|/images|../images|" $tmp/stylesheets/*.css
-cp -r public/javascripts/jquery.js $tmp/javascripts
+cp -r public/javascripts/*.js $tmp/javascripts
+cp public/images/* $tmp/images
 
 _get(){
 	curl localhost:3000/$1 > $1

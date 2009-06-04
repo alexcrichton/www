@@ -1,26 +1,55 @@
 body {
-  background-color: #000000;
-  color: #222;
+  background: #000 repeat-y url(/images/background.jpg);
+  color: #75db16;
   font-size: 12pt;
-}
-a {
-  color: #000;
-}
-
-a:hover {
-  color: #fff;
-  background-color: #000;
 }
 
 #container {
-  background-color: #fff;
-  border: solid #066;
-  border-width: 0 2px 2px 0;
-  margin: 0 auto;
+  color: #75db16;
   width: 900px;
 }
 
 #page {
-  padding: 10px;
-  text-align: center;
+  padding: 55px 10px 10px;
+}
+
+a, a:hover, a:visited {
+  color: #75db16;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 30pt;
+  font-weight: bold;
+  color: #75db16;
+  margin: 0;
+}
+
+h4 {
+  font-size: 12pt;
+}
+
+#websites {
+  float: right;
+  margin-top: -100px;
+}
+
+#websites .img {
+  float: left;
+  background: #46930f;
+  padding: 4px;
+  margin-right: 14px;
+  overflow: hidden;
+}
+
+#index ul{
+  list-style: none;
+}
+
+#selector {
+  position: absolute;
+  background: #75db16;
+  height: 5px;
+  width: 5px;
+  display: none;
 }
