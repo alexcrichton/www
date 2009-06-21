@@ -1,7 +1,7 @@
 /*!
  * jQuery corner plugin: simple corner rounding
  * Examples and documentation at: http://jquery.malsup.com/corner/
- * version 1.95 (02/26/2009)
+ * version 1.98 (02-JUN-2009)
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -10,10 +10,10 @@
 /**
  *  corner() takes a single string argument:  $('#myDiv').corner("effect corners width")
  *
- *  effect:  name of the effect to apply, such as round, bevel, notch, bite, etc (default is round). 
- *  corners: one or more of: top, bottom, tr, tl, br, or bl. 
- *           by default, all four corners are adorned. 
- *  width:   width of the effect; in the case of rounded corners this is the radius. 
+ *  effect:  name of the effect to apply, such as round, bevel, notch, bite, etc (default is round).
+ *  corners: one or more of: top, bottom, tr, tl, br, or bl.
+ *           by default, all four corners are adorned.
+ *  width:   width of the effect; in the case of rounded corners this is the radius.
  *           specify this value using the px suffix such as 10px (and yes, it must be pixels).
  *
  * @name corner
@@ -24,17 +24,18 @@
  * @author Dave Methvin (http://methvin.com/jquery/jq-corner.html)
  * @author Mike Alsup   (http://jquery.malsup.com/corner/)
  */
-;(function($) { 
+;(function($) {
 
 var expr = (function() {
+	if (! $.browser.msie) return false;
     var div = document.createElement('div');
     try { div.style.setExpression('width','0+0'); }
     catch(e) { return false; }
     return true;
 })();
-    
-function sz(el, p) { 
-    return parseInt($.css(el,p))||0; 
+
+function sz(el, p) {
+    return parseInt($.css(el,p))||0;
 };
 function hex2(s) {
     var s = parseInt(s).toString(16);
@@ -43,10 +44,10 @@ function hex2(s) {
 function gpc(node) {
     for ( ; node && node.nodeName.toLowerCase() != 'html'; node = node.parentNode ) {
         var v = $.css(node,'backgroundColor');
-        if ( v.indexOf('rgb') >= 0 ) { 
-            if ($.browser.safari && v == 'rgba(0, 0, 0, 0)')
-                continue;
-            var rgb = v.match(/\d+/g); 
+        if (v == 'rgba(0, 0, 0, 0)')
+            continue; // webkit
+        if (v.indexOf('rgb') >= 0) {
+            var rgb = v.match(/\d+/g);
             return '#'+ hex2(rgb[0]) + hex2(rgb[1]) + hex2(rgb[2]);
         }
         if ( v && v != 'transparent' )
@@ -72,7 +73,7 @@ function getWidth(fx, i, width) {
     case 'dog2':   return (i&2) ? (i+1) : width;
     case 'dog3':   return (i&3) ? (i+1) : width;
     case 'fray':   return (i%2)*width;
-    case 'notch':  return width; 
+    case 'notch':  return width;
     case 'bevel':  return i+1;
     }
 };
@@ -145,7 +146,7 @@ $.fn.corner = function(o) {
                         this.style.position = 'relative';
                     ds.position = 'absolute';
                     ds.top = ds.left = ds.right = ds.padding = ds.margin = '0';
-                    
+
                     // fix ie6 problem when blocked element has a border width
                     if (expr) {
                         var bw = sz(this,'borderLeftWidth') + sz(this,'borderRightWidth');
@@ -155,8 +156,8 @@ $.fn.corner = function(o) {
                         ds.width = '100%';
                 }
                 else {
-                    ds.margin = !bot ? '-'+pad.T+'px -'+pad.R+'px '+(pad.T-width)+'px -'+pad.L+'px' : 
-                                        (pad.B-width)+'px -'+pad.R+'px -'+pad.B+'px -'+pad.L+'px';                
+                    ds.margin = !bot ? '-'+pad.T+'px -'+pad.R+'px '+(pad.T-width)+'px -'+pad.L+'px' :
+                                        (pad.B-width)+'px -'+pad.R+'px -'+pad.B+'px -'+pad.L+'px';
                 }
 
                 for (var i=0; i < width; i++) {
@@ -170,7 +171,9 @@ $.fn.corner = function(o) {
     });
 };
 
-$.fn.uncorner = function() { return $('.jquery-corner', this).remove(); };
-    
-})(jQuery);
+$.fn.uncorner = function() {
+	$('div.jquery-corner', this).remove();
+	return this;
+};
 
+})(jQuery);

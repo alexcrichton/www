@@ -1,15 +1,15 @@
-<h3>Alex Crichton</h3>
-<h4><%= mail_to 'alex@alexcrichton.com' %></h4>
-<div id="websites" class="span-14">
-  <div class="img"><%= link_to image_tag('wilson-vert.jpg'), '/league' %></div>
-  <div class="img"><%= link_to image_tag('ac-vert.jpg'), 'http://academycommunity.com' %></div>
-  <div class="img"><%= link_to image_tag('laquercia-vert.jpg'), 'http://www.laquercia.us' %></div>
+<div id="name" class="inner">
+  <%= link_to_function image_tag('alexcrichton.jpg', :width => '320px', :class => 'first'), 'showMain();$(this).blur()' %>
+  <%= mail_to 'alex@alexcrichton.com', image_tag('email.jpg', :width => '320px') %>
 </div>
-<div id="index">
-  <div id="selector">&nbsp;</div>
+<div id="websites">
+  <h1><%= link_to_function 'WEBSITES', 'showWebsites();$(this).blur()'%></h1>
   <ul>
-    <li><a href="#">Woodrow Wilson</a></li>
-    <li><a href="#">AcademyCommunity</a></li>
-    <li><a href="#">LaQuercia</a></li>
+    <li><%= link_to 'LaQuercia', 'http://www.laquercia.us' %></li>
+    <li><%= link_to 'Woodrow Wilson', '/league' %></li>
+    <li><%= link_to 'AcademyCommunity', 'http://academycommunity.com' %></li>
   </ul>
+</div>
+<div id="java">
+  <h1><%= link_to_function 'JAVA', 'showJava();$(this).blur()' %></h1>
 </div>
