@@ -4,7 +4,7 @@ function showMain() {
   if (showing == null)
     return;
   // reset everything after the current menu has faded out
-  $('#websites ul, #java ul').fadeOut(function() {
+  $('#websites div, #java div').fadeOut(function() {
     $('#java').animate({width: '400px',height: '200px', top: '-170px', left: 0, backgroundColor:'white'});
     $('#java h1').animate({top: '-5px', left: '100px', fontSize: '40px'});
     $('#java h1 a').animate({color:'black'});
@@ -14,7 +14,7 @@ function showMain() {
     $('#name').animate({top: '110px', left: '275px', width: '400px', height: '250px'});
     $('#name img').animate({width:'320px'});
   });
-  showing = null;  
+  showing = null;
 }
 
 function showJava() {
@@ -23,7 +23,19 @@ function showJava() {
   if (showing != null) {
 
   } else {
-
+    // zoom in and shift left
+    $('#name').animate({width:'500px', height:'300px', left:'300px',top:'100px'}).find('img').animate({width:'420px'});
+    // increase to large rectangle on left
+    $('#websites').animate({width: '300px',height:'500px',top:'-320px', left:'650px'});
+    $('#websites h1').animate({left: '30px', top:'32px', fontSize:'50px'});
+    $('#websites h1 a').animate({color:'#ddd'});
+    // shift right, then have other stuff fade in
+    $('#java').animate({left:'-400px', top:'-520px'}, function() {
+      $('#java').css({width:'650px', left:'0', top:'-820px', height:'500px', backgroundColor: 'black'});
+      $('#java h1').css({left:'190px',fontSize:'80px',top:'32px'});
+      $('#java h1 a').animate({color:'white'});
+      $('#java div').fadeIn();
+    });
   }
   showing = 'java';
 }
@@ -34,9 +46,9 @@ function showWebsites() {
   if (showing != null) {
 
   } else {
-// zoom in and shift left
+    // zoom in and shift left
     $('#name').animate({width:'500px', height:'300px', left:'150px',top:'100px'}).find('img').animate({width:'420px'});
-        // increase to large rectangle on left
+    // increase to large rectangle on left
     $('#java').animate({width: '300px',height:'500px',top:'-520px'});
     $('#java h1').animate({left: '30px', top:'32px', fontSize:'80px'});
     $('#java h1 a').animate({color:'#ddd'});
@@ -46,8 +58,8 @@ function showWebsites() {
       $('#websites').css({width:'650px', left:'300px', top:'-320px', height:'500px', backgroundColor:'#000'});
       $('#websites h1').css({left:'190px',fontSize:'80px',top:'32px'});
       $('#websites h1 a').animate({color:'white'});
-      $('#websites ul').fadeIn();
+      $('#websites div').fadeIn();
     });
   }
-  showing = 'websites';  
+  showing = 'websites';
 }

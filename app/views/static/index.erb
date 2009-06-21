@@ -3,13 +3,22 @@
   <%= mail_to 'alex@alexcrichton.com', image_tag('email.jpg', :width => '320px') %>
 </div>
 <div id="websites">
-  <h1><%= link_to_function 'WEBSITES', 'showWebsites();$(this).blur()'%></h1>
-  <ul>
-    <li><%= link_to 'LaQuercia', 'http://www.laquercia.us' %></li>
-    <li><%= link_to 'Woodrow Wilson', '/league' %></li>
-    <li><%= link_to 'AcademyCommunity', 'http://academycommunity.com' %></li>
-  </ul>
+  <h1><%= link_to_function 'WEBSITES', 'showWebsites();$(this).blur()' %></h1>
+
+  <div class="list">
+    <div><%= link_to 'LaQuercia', 'http://www.laquercia.us' %></div>
+    <div><%= link_to 'Woodrow Wilson', '/league' %></div>
+    <div><%= link_to 'AcademyCommunity', 'http://academycommunity.com' %></div>
+  </div>
 </div>
 <div id="java">
   <h1><%= link_to_function 'JAVA', 'showJava();$(this).blur()' %></h1>
+
+  <div class="list">
+    <div>asdfasdf</div>
+    <div>asdf</div>
+    <div>asdf</div>
+    <div>asdf</div>
+    <div>asdf</div>
+  </div>
 </div>

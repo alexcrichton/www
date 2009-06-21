@@ -62,20 +62,23 @@ h1 a:hover {
   left: 170px;
 }
 
-#websites ul {
-  list-style: none;
-  display: none;
-  color: white;
-  left: 365px;
-  top: 65px;
+#websites .list {
+  left: 380px;
 }
 
-#websites ul li {
+.list {
+  width: 300px;
+  top: 25px;
+}
+
+.list div {
+  display: none;
+  color: white;
   font-size: 19px;
   margin-bottom: 30px;
 }
 
-#websites ul a:hover {
+.list a:hover {
   text-decoration: underline;
 }
 
@@ -90,4 +93,12 @@ h1 a:hover {
 #java h1 {
   left: 100px;
   top: -5px;
+}
+
+#java .list {
+  text-align: right;
+}
+
+#java .list div {
+  margin-right: 10px;
 }
