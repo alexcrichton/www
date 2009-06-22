@@ -44,7 +44,7 @@ if [ "$response" != "n" ]; then
   read response
   [[ "$response" != "n" ]] &&	git push
 fi
-git checkout new 
+git checkout master
 echo -n "Update server [Y/n]"
 read response
 [[ "$response" != "n" ]] && cap deploy
