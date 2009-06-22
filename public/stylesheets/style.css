@@ -19,6 +19,7 @@ a, a:hover {
 #page {
   overflow: hidden;
   height: 500px;
+  width: 100%;
   border: 1px solid #fff;
 }
 
@@ -55,6 +56,7 @@ h1 a:hover {
   top: -270px;
   left: 550px;
   background: #fff;
+  z-index: 3;
 }
 
 #websites h1 {
@@ -69,10 +71,10 @@ h1 a:hover {
 .list {
   width: 300px;
   top: 25px;
+  display: none;
 }
 
 .list div {
-  display: none;
   color: white;
   font-size: 19px;
   margin-bottom: 30px;
@@ -88,6 +90,7 @@ h1 a:hover {
   height: 200px;
   top: -170px;
   left: 0;
+  z-index: 2;
 }
 
 #java h1 {
@@ -101,4 +104,5 @@ h1 a:hover {
 
 #java .list div {
   margin-right: 10px;
+  top: -15px;
 }
