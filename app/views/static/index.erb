@@ -1,9 +1,9 @@
 <div id="name" class="inner">
-  <%= link_to_function image_tag('alexcrichton.jpg', :width => '320px', :class => 'first'), 'showMain();$(this).blur()' %>
+  <%= image_tag('alexcrichton.jpg', :width => '320px', :class => 'first') %>
   <%= mail_to 'alex@alexcrichton.com', image_tag('email.jpg', :width => '320px') %>
 </div>
 <div id="websites">
-  <h1><%= link_to_function 'WEBSITES', 'showWebsites();$(this).blur()' %></h1>
+  <h1><%= link_to_function '<span>WEBSITES</span>', 'show_websites();$(this).blur()' %></h1>
 
   <div class="list">
     <div><%= link_to 'LaQuercia', 'http://www.laquercia.us' %></div>
@@ -12,12 +12,11 @@
   </div>
 </div>
 <div id="java">
-  <h1><%= link_to_function 'JAVA', 'showJava();$(this).blur()' %></h1>
+  <h1><%= link_to_function '<span>JAVA</span>', 'show_java();$(this).blur()' %></h1>
 
   <div class="list">
-    <div>MDS</div>
-    <div>Calculator</div>
-    <div>Lathe</div>
-    <div>Mastermind</div>
+    <% ['MDS', 'Calculator', 'Ciphers', 'Number Speller', 'Pong', 'Sudoku', 'Tetris', 'Mastermind'].each do |e| %>
+      <div><%= link_to e, "/jars/#{e.gsub(/ /, '').downcase}.jar" %></div>
+    <% end %>
   </div>
 </div>

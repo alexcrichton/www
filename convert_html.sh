@@ -28,7 +28,6 @@ echo -n "Checkout live branch? [Y/n]"
 read response
 if [ "$response" != "n" ]; then
   git checkout live || exit 1
- # find . | grep -v .git | xargs git rm -r
   cp -r $tmp/* .
   git add .
 else
@@ -42,7 +41,7 @@ if [ "$response" != "n" ]; then
   git commit -am "$message"
   echo -n "Push changes? [Y/n] "
   read response
-  [[ "$response" != "n" ]] &&	git push
+  [[ "$response" != "n" ]] && git push
 fi
 git checkout master
 echo -n "Update server [Y/n]"
