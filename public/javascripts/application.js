@@ -1,7 +1,7 @@
 var showing = null;
 
 $(function() {
-  $('#websites .list div').hover(function() {
+  $('.list div').hover(function() {
     $('#name img').hide();
     $('#name').css('background', 'url(/images/' + $(this).find('a').attr('id') + '.jpg)');
   }, function() {
