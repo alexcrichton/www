@@ -1,5 +1,15 @@
 var showing = null;
 
+$(function() {
+  $('#websites .list div').hover(function() {
+    $('#name img').hide();
+    $('#name').css('background', 'url(/images/' + $(this).find('a').attr('id') + '.jpg)');
+  }, function() {
+    $('#name').css('background', 'black');
+    $('#name img').show();
+  });
+});
+
 function show_name() {
   if (showing == null)
     return;
@@ -92,7 +102,10 @@ function show_websites() {
 
 function unwrap(thing) {
   var selector = wrapper(thing);
-  $(selector).parents('a').replaceWith($(selector));
+  var clone = $(selector).clone();
+  var adding_to = $($(selector).parents('a').parents()[0]);
+  $(selector).parents('a').remove();
+  adding_to.prepend(clone);
 }
 
 function wrap(thing) {
@@ -108,6 +121,6 @@ function wrapper(thing) {
   else if (thing == 'name')
     return '#name img.first';
   else if (thing == 'java')
-    return '#java h1 span';
+      return '#java h1 span';
   return null;
 }
