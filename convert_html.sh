@@ -11,6 +11,7 @@ mkdir $tmp/javascripts
 cp -r public/stylesheets/* $tmp/stylesheets
 sed -i -r "s|/images|../images|" $tmp/stylesheets/*.css
 cp -r public/javascripts/*.js $tmp/javascripts
+sed -i -r "s|/images|images|" $tmp/javascripts/application.js
 cp public/images/* $tmp/images
 cp public/favicon.ico $tmp
 
