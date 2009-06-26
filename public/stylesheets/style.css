@@ -14,6 +14,7 @@ a, a:hover, span, a:visited {
 #container {
   width: 950px;
   margin: 20px auto;
+  background:#000;
 }
 
 #page {

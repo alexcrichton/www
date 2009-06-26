@@ -68,7 +68,7 @@ function show_websites() {
     return;
   var callback = function() {
     $('#websites').css({width:'650px', left:'300px', height:'500px', backgroundColor:'#000'});
-    $('#websites h1').css({left:'190px',fontSize:'80px',top:'32px'}).find('span').animate({color:'white'});
+    $('#websites h1').css({left:'190px',fontSize:'80px',top:'33px'}).find('span').animate({color:'white'});
     $('#websites .list').fadeIn();
   };
   if (showing != null) {
@@ -112,7 +112,10 @@ function wrap(thing) {
   var selector = wrapper(thing);
   if ($(selector).parents('a').length > 0)
     return;
-  $(selector).wrap($('<a href="#"></a>').attr('onclick', 'show_' + thing + '();$(this).blur();return false;'));
+  $(selector).wrap('<a href="#"></a>').parents('a').click(function(){
+    eval('show_' + thing + '()');
+    $(this.blur());
+  });
 }
 
 function wrapper(thing) {
