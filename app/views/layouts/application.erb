@@ -5,7 +5,10 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>alexcrichton.com</title>
   <%= stylesheet_link_tag 'screen', 'style' %>
-  <%= javascript_include_tag 'jquery', 'effects.core', 'application' %>
+  <%= javascript_include_tag 'jquery', 'effects.core', 'application' %> 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Alex Crichton's portfolio website" />
+  <meta name="keywords" content="alex crichton, portfolio, academycommunity, golden circle, woodrow wilson, java jars" />
 </head>
 <body>
 <div id="container">
@@ -13,7 +16,7 @@
     <%= yield %>
   </div>
 </div>
-<% if RAILS_ENV == 'production' %>
+<% if Rails.env.production? %>
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
