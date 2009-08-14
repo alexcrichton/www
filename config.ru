@@ -5,5 +5,5 @@ set :environment, :production
 
 disable :run, :reload
 
-require 'wilson'
+require 'alex'
 run Sinatra::Application
