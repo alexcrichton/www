@@ -23,12 +23,12 @@ after "deploy:update_code", "deploy:create_assets"
 
 namespace :deploy do
   task :symlink_league do
-    run "ln -sf #{deploy_to}/league #{release_path}/league"
+    run "ln -sf #{deploy_to}/league #{release_path}/public/league"
   end
   desc "Create asset packages for production"
   task :create_assets do
     run <<-EOF
-     cd #{release_path} && rake asset:packager:build_all
+     cd #{release_path} && rake compress:all
     EOF
   end
 
