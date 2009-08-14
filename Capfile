@@ -7,7 +7,7 @@ set :application, "alexcrichton.com"
 
 set :scm, :git
 set :repository,  "git://github.com/alexcrichton/alex_web.git"
-set :branch, "live"
+set :branch, "master"
 set :deploy_via, :remote_cache
 
 set :user, "alex"
@@ -19,24 +19,32 @@ set :use_sudo, false
 set :deploy_to, "/srv/www/#{application}"
 
 after 'deploy:update_code', 'deploy:symlink_league'
-
-name
+after "deploy:update_code", "deploy:create_assets"
 
 namespace :deploy do
   task :symlink_league do
-    run "ln -sf #{deploy_to}/league-site #{release_path}/league"
+    run "ln -sf #{deploy_to}/league #{release_path}/league"
   end
+  desc "Create asset packages for production"
+  task :create_assets do
+    run <<-EOF
+     cd #{release_path} && rake asset:packager:build_all
+    EOF
+  end
+
   task :finalize_update do
   end
   task :restart do
+    run "touch #{current_release}/tmp/restart.txt"
   end
   task :start do
+    run "touch #{current_release}/tmp/restart.txt"
   end
   task :stop do
+    # Do nothing, don't want to kill nginx
   end
 end
-namespace :db do
-end
+
 set :web_server, "academycommunity.com"
 set :keep_releases, 2
 
