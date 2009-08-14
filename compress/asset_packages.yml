@@ -1,0 +1,10 @@
+---
+javascripts:
+- base:
+  - jquery
+  - effects.core
+  - application
+stylesheets:
+- base:
+  - screen
+  - style

@@ -1,0 +1,23 @@
+<div id="name" class="inner">
+  <img src='/images/alexcrichton.jpg' width="320" class='first' alt='Alex Crichton'/>
+  <a href='mailto:alex@alexcrichton.com'> <img src='/images/email.jpg' width='320' alt='email'/>
+</div>
+<div id="websites">
+  <h1><a href='#' onclick='show_websites();$(this).blur();return false;'><span>WEBSITES</span></a></h1>
+
+  <div class="list">
+    <div><a href='http://www.laquercia.us/' id='lq'>LaQuercia</a></div>
+    <div><a href='/league' id='wilson'>Woodrow Wilson</a></div>
+    <div><a href='http://academycommunity.com/' id='ac'>AcademyCommunity</a></div>
+    <div><a href='http://gc.alexcrichton.com/' id='gc'>Golden Circle</a></div>
+  </div>
+</div>
+<div id="java">
+  <h1><a href='#' onclick='show_java();$(this).blur();return false;'><span>JAVA</span></a></h1>
+
+  <div class="list">
+    <% ['MDS', 'Calculator', 'Ciphers', 'Number Speller', 'Pong', 'Sudoku', 'Tetris', 'Mastermind'].each do |e| %>
+      <div><a href='<%= "/jars/#{e.gsub(/ /, '').downcase}.jar" %>' id='<%= e.gsub(/ /, '').downcase %>'><%= e %></a></div>
+    <% end %>
+  </div>
+</div>
