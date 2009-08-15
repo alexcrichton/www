@@ -18,13 +18,9 @@ set :use_sudo, false
 # via the :deploy_to variable:
 set :deploy_to, "/srv/www/#{application}"
 
-after 'deploy:update_code', 'deploy:symlink_league'
 after "deploy:update_code", "deploy:create_assets"
 
 namespace :deploy do
-  task :symlink_league do
-    run "ln -sf #{deploy_to}/league #{release_path}/public/league"
-  end
   desc "Create asset packages for production"
   task :create_assets do
     run <<-EOF
