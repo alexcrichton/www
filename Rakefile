@@ -1,6 +1,7 @@
 require 'rake'
 SINATRA_ROOT = File.dirname(__FILE__)
 require File.join(File.dirname(__FILE__), 'compress', 'asset_package')
+puts File.join(File.dirname(__FILE__), 'compress', 'asset_package')
 
 namespace :compress do
   desc 'Compress all javascripts and stylesheets'

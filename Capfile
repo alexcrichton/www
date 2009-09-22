@@ -16,7 +16,7 @@ set :use_sudo, false
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
-set :deploy_to, "/srv/www/#{application}"
+set :deploy_to, "/srv/http/#{application}"
 
 after "deploy:update_code", "deploy:create_assets"
 
@@ -41,7 +41,7 @@ namespace :deploy do
   end
 end
 
-set :web_server, "academycommunity.com"
+set :web_server, "localhost"
 set :keep_releases, 2
 
 role :web, web_server
