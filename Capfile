@@ -30,6 +30,8 @@ namespace :deploy do
 
   task :finalize_update do
   end
+  task :migrate do
+  end
   task :restart do
     run "touch #{current_release}/tmp/restart.txt"
   end
