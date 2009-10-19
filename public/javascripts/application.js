@@ -8,6 +8,22 @@ $(function() {
     $('#name').css('background', 'black');
     $('#name img').show();
   });
+  $('#container').bindLinks();
+});
+
+$.fn.extend({
+  bindLinks: function(){
+    $(this).find('#websites h1 a').click(function() {
+      show_websites();
+      $(this).blur();
+      return false;
+    });
+    $(this).find('#java h1 a').click(function() {
+      show_java();
+      $(this).blur();
+      return false;
+    });
+  }
 });
 
 function show_name() {
@@ -112,9 +128,9 @@ function wrap(thing) {
   var selector = wrapper(thing);
   if ($(selector).parents('a').length > 0)
     return;
-  $(selector).wrap('<a href="#"></a>').parents('a').click(function(){
+  $(selector).wrap('<a href="#"></a>').parents('a').click(function() {
     eval('show_' + thing + '()');
-    $(this.blur());
+    $(this).blur();
   });
 }
 
@@ -124,6 +140,6 @@ function wrapper(thing) {
   else if (thing == 'name')
     return '#name img.first';
   else if (thing == 'java')
-      return '#java h1 span';
+    return '#java h1 span';
   return null;
 }

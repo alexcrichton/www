@@ -1,0 +1,30 @@
+#name.inner
+  %img{ :src => '/images/alexcrichton.jpg', :width => '320', :class => 'first', :alt => 'Alex Crichton'}/
+  %a{ :href => 'mailto:alex@alexcrichton.com' }<
+    %img{ :src => '/images/email.jpg', :width => '320', :alt => 'email'}>/
+
+#websites
+  %h1<
+    %a{ :href => '#' }><
+      %span> WEBSITES
+
+  .list
+    %div<
+      %a#lq{ :href => 'http://www.laquercia.us/' }> LaQuercia
+    %div<
+      %a#wilson{ :href => '/league' }> Woodrow Wilson
+    %div<
+      %a#ac{ :href => 'http://academycommunity.com/' }> AcademyCommunity
+    %div<
+      %a#gc{ :href => 'http://gc.alexcrichton.com/' }> Golden Circle
+    %div<
+      %a#ib{ :href => 'http://ibleague.net/' }> IBLeague
+#java
+  %h1<
+    %a{ :href => '#' }><
+      %span> JAVA
+
+  .list
+    - ['MDS', 'Calculator', 'Ciphers', 'Number Speller', 'Pong', 'Sudoku', 'Tetris', 'Mastermind', 'eCal'].each do |e|
+      %div<
+        %a{ :href => "/jars/#{e.gsub(/ /, '').downcase}.jar", :id => e.gsub(/ /, '').downcase }> #{e}

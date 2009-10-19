@@ -1,12 +1,13 @@
 require 'rubygems'
 gem 'sinatra'
+gem 'haml'
 require 'sinatra'
-require 'erb'
+require 'haml'
 
 get '/' do
-  erb :index
+  haml :index
 end
 
 get '/index.html' do
-  erb :index
+  haml :index
 end
