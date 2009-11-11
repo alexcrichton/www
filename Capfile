@@ -45,7 +45,7 @@ end
 
 set :web_server, "alexcrichton.com"
 ssh_options[:port] = 443
-set :keep_releases, 2
+set :keep_releases, 1
 
 role :web, web_server
 
