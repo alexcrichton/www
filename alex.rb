@@ -18,6 +18,8 @@ get '/surprise' do
     erb :surprise
   elsif params[:a] =~ /nhd/i
     erb :surprise3
+  elsif params[:a] =~ /^tiger$/i
+    erb :surprise4
   elsif params[:a] == 'Parking Lot'
     haml :surprise2
   else
