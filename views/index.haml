@@ -26,5 +26,9 @@
 
   .list
     - ['MDS', 'Calculator', 'Ciphers', 'Number Speller', 'Pong', 'Sudoku', 'Tetris', 'Mastermind', 'eCal'].each do |e|
-      %div<
-        %a{ :href => "/jars/#{e.gsub(/ /, '').downcase}.jar", :id => e.gsub(/ /, '').downcase }> #{e}
+      - if e != 'eCal'
+        %div<
+          %a{ :href => "/jars/#{e.gsub(/ /, '').downcase}.jar", :id => e.gsub(/ /, '').downcase }> #{e}
+      - else
+        %div<
+          %a{ :href => "/surprise?a=Parking+Lot", :id => e.gsub(/ /, '').downcase }> #{e}

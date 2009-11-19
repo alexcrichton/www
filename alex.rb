@@ -14,9 +14,13 @@ get '/index.html' do
 end
 
 get '/surprise' do
-  if params[:a] == 'alexdc'
+  if params[:a] =~ /twilight/i
     erb :surprise
+  elsif params[:a] =~ /nhd/i
+    erb :surprise3
+  elsif params[:a] == 'Parking Lot'
+    haml :surprise2
   else
-    'Sorry, try again!'
+    "Sorry, try again!"
   end
 end
