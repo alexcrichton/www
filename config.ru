@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 
-set :environment, :production
+set :environment, :development
 
 disable :run, :reload
 

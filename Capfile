@@ -6,7 +6,7 @@ require 'erb'
 set :application, "alexcrichton.com"
 
 set :scm, :git
-set :repository,  "git://github.com/alexcrichton/alex_web.git"
+set :repository,  "git://me.alexcrichton.com/alex_web.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 
