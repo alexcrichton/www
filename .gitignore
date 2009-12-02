@@ -1,7 +1,8 @@
 .DS_Store
 log/*.log
 tmp/**/*
-public/**/*_packaged*
+public/javascripts/cache
+public/stylesheets/cache
 config/database.yml
 db/*.sqlite3
 public/files/*
