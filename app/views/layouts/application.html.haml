@@ -1,0 +1,16 @@
+!!!Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+
+  %head
+    %meta{ 'http-equiv' => "Content-type", :content => "text/html; charset=utf-8" }/
+    %title Title
+    = stylesheet_link_tag 'screen', 'style', :cache => 'cache/all' 
+    = javascript_include_tag 'jquery', 'jquery.form', 'application', :cache => 'cache/all' 
+  %body
+    #container
+      #header
+        = link_to image_tag('logo.jpg', :id => 'logo'), root_path
+      #content
+        = yield
+      #footer
+        %p © 2009
