@@ -18,14 +18,11 @@ set :use_sudo, false
 # via the :deploy_to variable:
 set :deploy_to, "/srv/www/#{application}"
 
-after "deploy:update_code", "deploy:create_assets"
+after "deploy:update_code", "deploy:create_tmp_dir"
 
 namespace :deploy do
-  desc "Create asset packages for production"
-  task :create_assets do
-    run <<-EOF
-     cd #{release_path} && rake compress:all
-    EOF
+  task :create_tmp_dir do
+    run "mkdir -p #{release_path}/tmp"
   end
 
   task :finalize_update do
