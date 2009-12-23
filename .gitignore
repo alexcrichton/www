@@ -1,4 +1,5 @@
 .DS_Store
+mkmf.log
 log/*.log
 tmp/**/*
 public/javascripts/cache
