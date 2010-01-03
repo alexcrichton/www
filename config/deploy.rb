@@ -11,6 +11,7 @@ set :use_sudo, false
 set :deploy_to, "/srv/http/alexcrichton.com"
 
 after "deploy:update_code", "db:symlink"
+after "deploy:setup", "db"
 
 namespace :db do
   task :default do
