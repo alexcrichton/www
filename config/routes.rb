@@ -1,3 +1,3 @@
-ActionController::Routing::Routes.draw do |map|
-  map.root :controller => 'static', :action => 'index'
+AlexWeb::Application.routes.draw do |map|
+  root :to => 'static#index'
 end
