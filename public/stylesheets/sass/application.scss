@@ -1,21 +1,21 @@
 @import "screen";
 
-$width: 950px;
+$width:         950px;
 $portion_width: $width/3.2;
-$height: 500px;
-$name_border: 10px;
-$piece_height: 250px;
-$piece_width: $height;
-$color1: black;
-$color2: white;
-$link_size: 40px;
-$time: 1s;
+$height:        500px;
+$name_border:   10px;
+$piece_height:  250px;
+$piece_width:   $height;
+$color1:        black;
+$color2:        white;
+$link_size:     40px;
+$time:          700ms;
 
 @mixin piece {
-  width: $height;
-  height: $piece_height;
+  width:      $height;
+  height:     $piece_height;
   background: $color2;
-  color: $color1;
+  color:      $color1;
 }
 
 body {
@@ -36,14 +36,14 @@ a {
 }
 
 #container {
-  width: $width;
-  margin: 20px auto;
+  width:      $width;
+  margin:     20px auto;
   background: $color1;
-  color: $color2;
-  overflow: hidden;
-  height: $height;
-  border: 1px solid $color2;
-  position: relative;
+  color:      $color2;
+  overflow:   hidden;
+  height:     $height;
+  border:     1px solid $color2;
+  position:   relative;
 
   > div {
     position: absolute;
@@ -53,14 +53,14 @@ a {
 #name {
   -webkit-transition: $time;
   
-  top: ($height - $piece_height) / 2 - $name_border;
+  top:  ($height - $piece_height) / 2 - $name_border;
   left: ($width - $piece_width) / 2 - $name_border;
   
   @include piece;
-  width: 400px;
+  width:      400px;
   background: $color1;
-  border: $name_border solid $color2;
-  z-index: 4;
+  border:     $name_border solid $color2;
+  z-index:    4;
   text-align: center;
   
   a:first-child {
@@ -84,7 +84,7 @@ a {
   > a:first-child {
     position: absolute;
     -webkit-transition-property: top, left, font-size;
-    -webkit-transition-duration: 1s;
+    -webkit-transition-duration: $time;
   }
 }
 
@@ -109,13 +109,13 @@ a {
 }
 
 ul {
-  position: absolute;
+  position:   absolute;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  top: 2 * $link_size + 20;
-  opacity: 0;
-  right: -999em;
+  margin:     0;
+  padding:    0;
+  top:        2 * $link_size + 20;
+  opacity:    0;
+  right:      -999em;
   
   li a {
     font-size: $link_size / 2;

@@ -261,7 +261,7 @@ a {
     position: absolute; }
 
 #name {
-  -webkit-transition: 1s;
+  -webkit-transition: 700ms;
   top: 115px;
   left: 215px;
   width: 500px;
@@ -282,17 +282,17 @@ a {
     width: 85%; }
 
 #websites, #java {
-  -webkit-transition: 1s;
+  -webkit-transition: 700ms;
   width: 500px;
   height: 250px;
   background: white;
   color: black;
   -webkit-transition-property: height, top, all;
-  -webkit-transition-delay: 1s, 1s, 0; }
+  -webkit-transition-delay: 700ms, 700ms, 0; }
   #websites > a:first-child, #java > a:first-child {
     position: absolute;
     -webkit-transition-property: top, left, font-size;
-    -webkit-transition-duration: 1s; }
+    -webkit-transition-duration: 700ms; }
 
 #websites {
   z-index: 3;
@@ -348,8 +348,8 @@ ul {
     left: 20px; }
   #container.java #java ul {
     left: 0;
-    -webkit-transition: opacity 1s;
-    -webkit-transition-delay: 1s;
+    -webkit-transition: opacity 700ms;
+    -webkit-transition-delay: 700ms;
     opacity: 1; }
 
 #container.websites #name {
@@ -362,8 +362,8 @@ ul {
     font-size: 80px;
     left: 20px; }
   #container.websites #websites ul {
-    -webkit-transition: opacity 1s;
-    -webkit-transition-delay: 1s;
+    -webkit-transition: opacity 700ms;
+    -webkit-transition-delay: 700ms;
     opacity: 1;
     right: 0; }
 #container.websites #java {
