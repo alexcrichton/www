@@ -1,32 +1,22 @@
-#name.inner
-  %img{ :src => '/images/alexcrichton.jpg', :width => '320', :class => 'first', :alt => 'Alex Crichton'}/
-  %a{ :href => 'mailto:alex@alexcrichton.com' }<
-    %img{ :src => '/images/email.jpg', :width => '320', :alt => 'email'}>/
+#name
+  = link_to 'Alex Crichton', '#'
+  = mail_to 'alex@alexcrichton.com' 
 
 #websites
-  %h1<
-    %a{ :href => '#' }><
-      %span> WEBSITES
+  %a{ :href => '#' } WEBSITES
 
-  .list
-    -#%div<
-    -#  %a#lq{ :href => 'http://www.laquercia.us/' }> LaQuercia
-    -#%div<
-    -#  %a#wilson{ :href => '/league' }> Woodrow Wilson
-    -#%div<
-    -#  %a#ac{ :href => 'http://academycommunity.com/' }> AcademyCommunity
-    %div<
-      %a#gc{ :href => 'http://goldencircle.heroku.com/' }> Golden Circle
-    %div<
-      %a#ib{ :href => 'http://ibleague.net/' }> IBLeague
-    %div<
-      %a#tartan{ :href => 'http://thetartan.org/' }> The Tartan Online
+  %ul
+    %li<
+      %a#gc{ :href => 'http://goldencircle.heroku.com/' } Golden Circle
+    %li<
+      %a#ib{ :href => 'http://ibleague.net/' } IBLeague
+    %li<
+      %a#tartan{ :href => 'http://thetartan.org/' } The Tartan Online
+    
 #java
-  %h1<
-    %a{ :href => '#' }><
-      %span> JAVA
+  %a{ :href => '#' } JAVA
 
-  .list
+  %ul
     - ['MDS', 'Calculator', 'Ciphers', 'Number Speller', 'Pong', 'Sudoku', 'Tetris', 'Mastermind', 'eCal'].each do |e|
-      %div<
-        %a{ :href => "/jars/#{e.gsub(/ /, '').downcase}.jar", :id => e.gsub(/ /, '').downcase }> #{e}
+      %li<
+        %a{ :href => "/jars/#{e.gsub(/ /, '').downcase}.jar", :id => e.gsub(/\s/, '').downcase }= e

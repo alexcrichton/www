@@ -40,3 +40,5 @@ AlexWeb::Application.configure do
   # Enable threaded mode
   # config.threadsafe!
 end
+
+Sass::Plugin.options[:style] = :compressed
