@@ -1,5 +1,6 @@
 @import "blueprint/typography";
 @import "compass/css3";
+@import "compass/utilities/text/replacement";
 
 $width:         950px;
 $portion_width: $width/3.2;
@@ -65,15 +66,22 @@ a {
   z-index:    4;
   text-align: center;
 
-  a:first-child {
-    margin-top: 25px;
-    content: image-url('/images/alexcrichton.jpg');
+  a {
+    display: inline-block;
+    @include background-size(100% auto);
     width: 85%;
   }
 
-  a:last-child {
-    content: image-url('/images/email.jpg');
+  a:first-child {
+    margin-top: 25px;
+    @include replace-text('alexcrichton.jpg');
     width: 85%;
+    height: 70%;
+  }
+
+  a:last-child {
+    @include replace-text('email.jpg');
+    height: 40px;
   }
 }
 
@@ -170,7 +178,7 @@ ul {
 #container.java, #container.websites {
   > div > a:first-child {
     font-size: 2 * $link_size;
-     left: $link_size / 2;
+    left: $link_size / 2;
   }
 }
 
