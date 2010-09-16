@@ -1,4 +1,5 @@
-@import "screen";
+@import "blueprint/typography";
+@import "compass/css3";
 
 $width:         950px;
 $portion_width: $width/3.2;
@@ -20,6 +21,7 @@ $time:          700ms;
 
 body {
   background: $color1;
+  @include blueprint-typography-body(12px);
 }
 
 a, a:hover, span, a:visited {
@@ -29,7 +31,7 @@ a, a:hover, span, a:visited {
 
 a {
   font-size: $link_size;
-  
+
   &:hover {
     color: #498d20;
   }
@@ -51,47 +53,49 @@ a {
 }
 
 #name {
-  -webkit-transition: $time;
-  
+  @include transition-duration($time);
+
   top:  ($height - $piece_height) / 2 - $name_border;
   left: ($width - $piece_width) / 2 - $name_border;
-  
+
   @include piece;
   width:      400px;
   background: $color1;
   border:     $name_border solid $color2;
   z-index:    4;
   text-align: center;
-  
+
   a:first-child {
     margin-top: 25px;
-    content: url(/images/alexcrichton.jpg);
+    content: image-url('/images/alexcrichton.jpg');
     width: 85%;
   }
-  
+
   a:last-child {
-    content: url(/images/email.jpg);
+    content: image-url('/images/email.jpg');
     width: 85%;
   }
 }
 
 #websites, #java {
-  -webkit-transition: $time;
+  @include transition-duration($time);
   @include piece;
-  -webkit-transition-property: height, top, all;
-  -webkit-transition-delay: $time, $time, 0;
- 
+
+  @include transition-property("height, top, all");
+  @include transition-delay("$time, $time, 0");
+
   > a:first-child {
     position: absolute;
-    -webkit-transition-property: top, left, font-size;
-    -webkit-transition-duration: $time;
+
+    @include transition-property("top, left, font-size");
+    @include transition-duration($time);
   }
 }
 
 #websites {
   z-index: 3;
   right: 0;
-  
+
   ul li {
     margin-top: 20px;
     width: 280px;
@@ -101,7 +105,7 @@ a {
 #java {
   z-index: 2;
   left: 0;
-  
+
   ul {
     width: 230px;
     text-align: right;
@@ -116,7 +120,7 @@ ul {
   top:        2 * $link_size + 20;
   opacity:    0;
   right:      -999em;
-  
+
   li a {
     font-size: $link_size / 2;
     margin-bottom: 30px;
@@ -124,8 +128,7 @@ ul {
 }
 
 @mixin showing-ul {
-  -webkit-transition: opacity $time;
-  -webkit-transition-delay: $time;
+  @include transition(opacity, $time, false, $time);
   opacity: 1;
 }
 
@@ -136,7 +139,7 @@ ul {
       left: $piece_width/2.3;
     }
   }
-  
+
   #java {
     top: $height - $piece_height;
 
@@ -145,14 +148,14 @@ ul {
       left: $link_size * 2;
     }
   }
-  
+
 }
 
 @mixin showing-piece {
   height: $height;
   color: $color2;
   background: $color1;
-  
+
   > a:first-child {
     font-size: 2 * $link_size;
     left: $link_size / 2;
@@ -160,27 +163,27 @@ ul {
 }
 
 @mixin hiding-piece {
-  -webkit-transform: rotate(90deg);
+  @include rotate(90deg);
   top: ($piece_width - $piece_height) / 2;
 }
 
 #container.java, #container.websites {
   > div > a:first-child {
     font-size: 2 * $link_size;
-     left: $link_size / 2;  
+     left: $link_size / 2;
   }
 }
 
 #container.java {
   #name {
-    -webkit-transform: scale(1.2) translate(65px, -10px);
+    @include transform(1.2, 0, 65px, -10px);
   }
-  
+
   #websites {
     @include hiding-piece;
-    right: -($piece_width - $piece_height) / 2;  
+    right: -($piece_width - $piece_height) / 2;
   }
-  
+
   #java {
     @include showing-piece;
 
@@ -193,9 +196,9 @@ ul {
 
 #container.websites {
   #name {
-    -webkit-transform: scale(1.2) translate(-65px, 10px);
+    @include transform(1.2, 0, -65px, 10px);
   }
-  
+
   #websites {
     @include showing-piece;
 
@@ -204,11 +207,11 @@ ul {
       right: 0;
     }
   }
-  
+
   #java {
     @include hiding-piece;
-    left: -($piece_width - $piece_height) / 2;  
-  
+    left: -($piece_width - $piece_height) / 2;
+
     > a:first-child {
       top: $piece_height - (2 * $link_size + 10);
     }

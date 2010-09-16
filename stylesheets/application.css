@@ -1,1 +1,254 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,dialog,figure,footer,header,hgroup,nav,section{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block}body{line-height:1.5}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal}table,td,th{vertical-align:middle}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:"" ""}a img{border:none}html{font-size:100.01%}body{font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif}h1,h2,h3,h4,h5,h6{font-weight:normal;color:#111}h1{font-size:3em;line-height:1;margin-bottom:0.5em}h2{font-size:2em;margin-bottom:0.75em}h3{font-size:1.5em;line-height:1;margin-bottom:1em}h4{font-size:1.2em;line-height:1.25;margin-bottom:1.25em}h5{font-size:1em;font-weight:bold;margin-bottom:1.5em}h6{font-size:1em;font-weight:bold}h1 img,h2 img,h3 img,h4 img,h5 img,h6 img{margin:0}p{margin:0 0 1.5em}p img.left{float:left;margin:1.5em 1.5em 1.5em 0;padding:0}p img.right{float:right;margin:1.5em 0 1.5em 1.5em}a:focus,a:hover{color:#000}a{color:#009;text-decoration:underline}blockquote{margin:1.5em;color:#666;font-style:italic}strong{font-weight:bold}em,dfn{font-style:italic}dfn{font-weight:bold}sup,sub{line-height:0}abbr,acronym{border-bottom:1px dotted #666}address{margin:0 0 1.5em;font-style:italic}del{color:#666}pre{margin:1.5em 0;white-space:pre}pre,code,tt{font:1em 'andale mono', 'lucida console', monospace;line-height:1.5}li ul,li ol{margin:0}ul,ol{margin:0 1.5em 1.5em 0;padding-left:3.333em}ul{list-style-type:disc}ol{list-style-type:decimal}dl{margin:0 0 1.5em 0}dl dt{font-weight:bold}dd{margin-left:1.5em}table{margin-bottom:1.4em;width:100%}th{font-weight:bold}thead th{background:#c3d9ff}th,td,caption{padding:4px 10px 4px 5px}tr.even td{background:#e5ecf9}tfoot{font-style:italic}caption{background:#eee}.small{font-size:.8em;margin-bottom:1.875em;line-height:1.875em}.large{font-size:1.2em;line-height:2.5em;margin-bottom:1.25em}.hide{display:none}.quiet{color:#666}.loud{color:#000}.highlight{background:#ff0}.added{background:#060;color:#fff}.removed{background:#900;color:#fff}.first{margin-left:0;padding-left:0}.last{margin-right:0;padding-right:0}.top{margin-top:0;padding-top:0}.bottom{margin-bottom:0;padding-bottom:0}body{background:black}a,a:hover,span,a:visited{color:inherit;text-decoration:none}a{font-size:40px}a:hover{color:#498d20}#container{width:950px;margin:20px auto;background:black;color:white;overflow:hidden;height:500px;border:1px solid white;position:relative}#container > div{position:absolute}#name{-webkit-transition:700ms;top:115px;left:215px;width:500px;height:250px;background:white;color:black;width:400px;background:black;border:10px solid white;z-index:4;text-align:center}#name a:first-child{margin-top:25px;content:url(/images/alexcrichton.jpg);width:85%}#name a:last-child{content:url(/images/email.jpg);width:85%}#websites,#java{-webkit-transition:700ms;width:500px;height:250px;background:white;color:black;-webkit-transition-property:height, top, all;-webkit-transition-delay:700ms, 700ms, 0}#websites > a:first-child,#java > a:first-child{position:absolute;-webkit-transition-property:top, left, font-size;-webkit-transition-duration:700ms}#websites{z-index:3;right:0}#websites ul li{margin-top:20px;width:280px}#java{z-index:2;left:0}#java ul{width:230px;text-align:right}ul{position:absolute;list-style:none;margin:0;padding:0;top:100px;opacity:0;right:-999em}ul li a{font-size:20px;margin-bottom:30px}#container.name #websites > a:first-child{top:206px;left:217.391px}#container.name #java{top:250px}#container.name #java > a:first-child{top:-15px;left:80px}#container.java > div > a:first-child,#container.websites > div > a:first-child{font-size:80px;left:20px}#container.java #name{-webkit-transform:scale(1.2) translate(65px, -10px)}#container.java #websites{-webkit-transform:rotate(90deg);top:125px;right:-125px}#container.java #java{height:500px;color:white;background:black}#container.java #java > a:first-child{font-size:80px;left:20px}#container.java #java ul{left:0;-webkit-transition:opacity 700ms;-webkit-transition-delay:700ms;opacity:1}#container.websites #name{-webkit-transform:scale(1.2) translate(-65px, 10px)}#container.websites #websites{height:500px;color:white;background:black}#container.websites #websites > a:first-child{font-size:80px;left:20px}#container.websites #websites ul{-webkit-transition:opacity 700ms;-webkit-transition-delay:700ms;opacity:1;right:0}#container.websites #java{-webkit-transform:rotate(90deg);top:125px;left:-125px}#container.websites #java > a:first-child{top:160px}
+/* line 22, ../_sass/application.scss */
+body {
+  background: black;
+  line-height: 1.5;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  font-size: 75%;
+}
+
+/* line 27, ../_sass/application.scss */
+a, a:hover, span, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 32, ../_sass/application.scss */
+a {
+  font-size: 40px;
+}
+/* line 35, ../_sass/application.scss */
+a:hover {
+  color: #498d20;
+}
+
+/* line 40, ../_sass/application.scss */
+#container {
+  width: 950px;
+  margin: 20px auto;
+  background: black;
+  color: white;
+  overflow: hidden;
+  height: 500px;
+  border: 1px solid white;
+  position: relative;
+}
+/* line 50, ../_sass/application.scss */
+#container > div {
+  position: absolute;
+}
+
+/* line 55, ../_sass/application.scss */
+#name {
+  -moz-transition-duration: 700ms;
+  -webkit-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+  transition-duration: 700ms;
+  top: 115px;
+  left: 215px;
+  width: 500px;
+  height: 250px;
+  background: white;
+  color: black;
+  width: 400px;
+  background: black;
+  border: 10px solid white;
+  z-index: 4;
+  text-align: center;
+}
+/* line 68, ../_sass/application.scss */
+#name a:first-child {
+  margin-top: 25px;
+  content: url('/images/alexcrichton.jpg?1282100894');
+  width: 85%;
+}
+/* line 74, ../_sass/application.scss */
+#name a:last-child {
+  content: url('/images/email.jpg?1282100894');
+  width: 85%;
+}
+
+/* line 80, ../_sass/application.scss */
+#websites, #java {
+  -moz-transition-duration: 700ms;
+  -webkit-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+  transition-duration: 700ms;
+  width: 500px;
+  height: 250px;
+  background: white;
+  color: black;
+  -moz-transition-property: height, top, all;
+  -webkit-transition-property: height, top, all;
+  -o-transition-property: height, top, all;
+  transition-property: height, top, all;
+  -moz-transition-delay: $time, $time, 0;
+  -webkit-transition-delay: $time, $time, 0;
+  -o-transition-delay: $time, $time, 0;
+  transition-delay: $time, $time, 0;
+}
+/* line 87, ../_sass/application.scss */
+#websites > a:first-child, #java > a:first-child {
+  position: absolute;
+  -moz-transition-property: top, left, font-size;
+  -webkit-transition-property: top, left, font-size;
+  -o-transition-property: top, left, font-size;
+  transition-property: top, left, font-size;
+  -moz-transition-duration: 700ms;
+  -webkit-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+  transition-duration: 700ms;
+}
+
+/* line 95, ../_sass/application.scss */
+#websites {
+  z-index: 3;
+  right: 0;
+}
+/* line 99, ../_sass/application.scss */
+#websites ul li {
+  margin-top: 20px;
+  width: 280px;
+}
+
+/* line 105, ../_sass/application.scss */
+#java {
+  z-index: 2;
+  left: 0;
+}
+/* line 109, ../_sass/application.scss */
+#java ul {
+  width: 230px;
+  text-align: right;
+}
+
+/* line 115, ../_sass/application.scss */
+ul {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 100px;
+  opacity: 0;
+  right: -999em;
+}
+/* line 124, ../_sass/application.scss */
+ul li a {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* line 137, ../_sass/application.scss */
+#container.name #websites > a:first-child {
+  top: 206px;
+  left: 217.391px;
+}
+/* line 143, ../_sass/application.scss */
+#container.name #java {
+  top: 250px;
+}
+/* line 146, ../_sass/application.scss */
+#container.name #java > a:first-child {
+  top: -15px;
+  left: 80px;
+}
+
+/* line 171, ../_sass/application.scss */
+#container.java > div > a:first-child, #container.websites > div > a:first-child {
+  font-size: 80px;
+  left: 20px;
+}
+
+/* line 178, ../_sass/application.scss */
+#container.java #name {
+  -moz-transform: scale(1.2) rotate(0) translate(65px, -10px) skew(0deg, 0deg);
+  -webkit-transform: scale(1.2) rotate(0) translate(65px, -10px) skew(0deg, 0deg);
+  -o-transform: scale(1.2) rotate(0) translate(65px, -10px) skew(0deg, 0deg);
+  transform: scale(1.2) rotate(0) translate(65px, -10px) skew(0deg, 0deg);
+}
+/* line 182, ../_sass/application.scss */
+#container.java #websites {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 125px;
+  right: -125px;
+}
+/* line 187, ../_sass/application.scss */
+#container.java #java {
+  height: 500px;
+  color: white;
+  background: black;
+}
+/* line 159, ../_sass/application.scss */
+#container.java #java > a:first-child {
+  font-size: 80px;
+  left: 20px;
+}
+/* line 190, ../_sass/application.scss */
+#container.java #java ul {
+  left: 0;
+  -moz-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 700ms;
+  -webkit-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+  transition-duration: 700ms;
+  -moz-transition-delay: 700ms;
+  -webkit-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
+  transition-delay: 700ms;
+  opacity: 1;
+}
+
+/* line 198, ../_sass/application.scss */
+#container.websites #name {
+  -moz-transform: scale(1.2) rotate(0) translate(-65px, 10px) skew(0deg, 0deg);
+  -webkit-transform: scale(1.2) rotate(0) translate(-65px, 10px) skew(0deg, 0deg);
+  -o-transform: scale(1.2) rotate(0) translate(-65px, 10px) skew(0deg, 0deg);
+  transform: scale(1.2) rotate(0) translate(-65px, 10px) skew(0deg, 0deg);
+}
+/* line 202, ../_sass/application.scss */
+#container.websites #websites {
+  height: 500px;
+  color: white;
+  background: black;
+}
+/* line 159, ../_sass/application.scss */
+#container.websites #websites > a:first-child {
+  font-size: 80px;
+  left: 20px;
+}
+/* line 205, ../_sass/application.scss */
+#container.websites #websites ul {
+  -moz-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 700ms;
+  -webkit-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+  transition-duration: 700ms;
+  -moz-transition-delay: 700ms;
+  -webkit-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
+  transition-delay: 700ms;
+  opacity: 1;
+  right: 0;
+}
+/* line 211, ../_sass/application.scss */
+#container.websites #java {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 125px;
+  left: -125px;
+}
+/* line 215, ../_sass/application.scss */
+#container.websites #java > a:first-child {
+  top: 160px;
+}
