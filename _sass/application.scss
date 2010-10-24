@@ -83,6 +83,7 @@ a {
 #websites, #java {
   > a:first-child {
     position: absolute;
+    text-transform: uppercase;
 
     @include transition-duration($time);
   }
