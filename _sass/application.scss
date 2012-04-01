@@ -1,214 +1,32 @@
-@import "blueprint/typography";
-@import "compass";
+@import url(http://fonts.googleapis.com/css?family=Molengo);
+@import "accordion";
 
-$width:         950px;
-$height:        500px;
-$name_border:   10px;
-$piece_height:  250px;
-$piece_width:   $height;
-$color1:        black;
-$color2:        white;
-$link_size:     40px;
-$time:          700ms;
+* { font-family: Helvetica, arial, serif }
 
-body {
-  background: $color1;
-  @include blueprint-typography-body(12px);
+body{ background: #eee; }
+
+#main {
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
-a, a:hover, span, a:visited {
-  @include unstyled-link;
-}
-
-a {
-  font-size: $link_size;
-
-  &:hover {
-    color: #498d20;
-  }
-}
-
-#container {
-  width:      $width;
-  margin:     20px auto;
-  background: $color1;
-  color:      $color2;
-  overflow:   hidden;
-  height:     $height;
-  border:     1px solid $color2;
-  position:   relative;
-
-  > div {
-    position: absolute;
-  }
-}
-
-#name, #websites, #java {
-  @include transition-duration($time);
-
-  width:      $height;
-  height:     $piece_height;
-  background: $color2;
-  color:      $color1;
-}
-
-#name {
-  top:  ($height - $piece_height) / 2 - $name_border;
-  left: ($width - $piece_width) / 2 - $name_border;
-
-  width:      400px;
-  background: $color1;
-  border:     $name_border solid $color2;
-  z-index:    4;
+h1.main {
   text-align: center;
-
-  a {
-    @include inline-block;
-    @include background-size(100% auto);
-    width: 85%;
-  }
-
-  a:first-child {
-    margin-top: 25px;
-    @include replace-text('alexcrichton.jpg');
-    height: 70%;
-  }
-
-  a:last-child {
-    @include replace-text('email.jpg');
-    height: 40px;
-  }
+  margin: 0 auto;
+  font-family:'Molengo', arial, serif;
 }
 
-#websites, #java {
-  > a:first-child {
-    position: absolute;
-    text-transform: uppercase;
-
-    @include transition-duration($time);
-  }
+li.slide .content {
+  background: white;
+  padding: 20px;
+  height: 100%;
 }
 
-#websites {
-  z-index: 3;
-  right: 0;
-
-  ul li {
-    margin-top: 20px;
-    width: 280px;
-  }
+.content img.right, .content iframe.right {
+  float: right;
+  box-shadow: #666 2px 2px 2px;
 }
 
-#java {
-  z-index: 2;
-  left: 0;
-
-  ul {
-    width: 230px;
-    text-align: right;
-  }
-}
-
-ul {
-  position:   absolute;
-  list-style: none;
-  margin:     0;
-  padding:    0;
-  top:        2 * $link_size + 20;
-  opacity:    0;
-  right:      -999em;
-
-  li a {
-    font-size: $link_size / 2;
-    margin-bottom: 30px;
-  }
-}
-
-#container.name {
-  #websites {
-    > a:first-child {
-      top: $piece_height - ($link_size + 4);
-      left: $piece_width/2.3;
-    }
-  }
-
-  #java {
-    top: $height - $piece_height;
-
-    > a:first-child {
-      top: -($link_size * 3 / 8);
-      left: $link_size * 2;
-    }
-  }
-
-}
-
-@mixin showing-piece {
-  height: $height;
-  color: $color2;
-  background: $color1;
-
-  > a:first-child {
-    font-size: 2 * $link_size;
-    left: $link_size / 2;
-  }
-
-  ul {
-    @include transition(opacity, $time, false, $time);
-    opacity: 1;
-  }
-}
-
-@mixin hiding-piece {
-  @include rotate(90deg);
-  top: ($piece_width - $piece_height) / 2;
-}
-
-#container.java, #container.websites {
-  > div > a:first-child {
-    font-size: 2 * $link_size;
-    left: $link_size / 2;
-  }
-}
-
-#container.java {
-  #name {
-    @include transform(1.2, 0, 65px, -10px);
-  }
-
-  #websites {
-    @include hiding-piece;
-    right: -($piece_width - $piece_height) / 2;
-  }
-
-  #java {
-    @include showing-piece;
-
-    ul {
-      left: 0;
-    }
-  }
-}
-
-#container.websites {
-  #name {
-    @include transform(1.2, 0, -65px, 10px);
-  }
-
-  #websites {
-    @include showing-piece;
-
-    ul {
-      right: 0;
-    }
-  }
-
-  #java {
-    @include hiding-piece;
-    left: -($piece_width - $piece_height) / 2;
-
-    > a:first-child {
-      top: $piece_height - (2 * $link_size + 10);
-    }
-  }
-}
+img.shadow { box-shadow: #666 2px 2px 2px; }
+ul > li { margin-top: 10px; }
+.images { float: right; }
